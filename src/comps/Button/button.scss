@@ -32,7 +32,7 @@ $fs:16px;
     box-shadow: 1px 3px 20px -9px #0096A9;
 }
 .wide {
-    font-size: 22px;
+    font-size: $fs*1.5;
     height: 50px;
     width: 226px;
 }
