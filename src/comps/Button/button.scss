@@ -1,0 +1,49 @@
+$fs:16px;
+
+@mixin flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button {
+    @include flex;
+    width: 83px;
+    height: 28px;
+    border-radius: 28px;
+    border: none;
+    color: #FFFFFF;
+    font-size: $fs;
+    &:hover {
+        background-color: green;
+    }
+    &:active {
+        background-color: grey;
+    }
+}
+.button_blue {
+    background-color: #0096A9;
+}
+.border_blue {
+    background-color: #FFFFFF;
+    border: solid 1px #0096A9;
+    color: #0096A9;
+}
+.shadow {
+    box-shadow: 1px 3px 20px -9px #0096A9;
+}
+.wide {
+    font-size: 22px;
+    height: 50px;
+    width: 226px;
+}
+.delete {
+    @include flex;
+    max-width: 25px;
+    max-height: 25px;
+    border-radius: 25px;
+    border: none;
+    color: white;
+    &:active {
+        background-color: red;
+    }
+}
