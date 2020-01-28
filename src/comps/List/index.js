@@ -5,9 +5,8 @@ function List({items}){
     return(
         <div className='container'>
             {items.map((o, i)=>{
-                    return <ItemCard {...o}
-        />
-            })};
+                    return <ItemCard {...o}/>
+            })}
         </div>
     )
 }
@@ -15,7 +14,11 @@ function List({items}){
 List.defaultProps = {
     items:[{
         itemTitle:'Item 1'
-    }]
+    },
+    {
+        itemTitle:'Item 2'
+    },
+    ]
 };
 
 export default List;

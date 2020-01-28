@@ -1,14 +1,15 @@
 import React from 'react';
 
-function ItemCard({}){
+function ItemCard({itemTitle, itemImage}){
     return(
-        <div>
-            
+        <div className = 'itemContainer'>
+            {itemTitle}
+            {itemImage}
         </div>
     )
 };
 
 ItemCard.defaultProps = {
-
+    
 };
 export default ItemCard;

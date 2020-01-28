@@ -1,6 +1,6 @@
-@import './ListCard/itemCard.scss';
+@import './ItemCard/itemCard.scss';
 
 .container {
    display: flex; 
-   max-height: 130px;
+   flex-direction: column;
 }
