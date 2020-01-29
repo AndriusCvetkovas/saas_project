@@ -1,0 +1,15 @@
+@import './MenuItems/MenuItems.scss';
+
+.Menu-container{
+    width: 250px;
+    height: 25px;
+    border: 2px solid teal;
+    border-radius: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    .selected-value{
+        margin-left: 10px;
+    }
+}
