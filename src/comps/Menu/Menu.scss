@@ -6,10 +6,62 @@
     border: 2px solid teal;
     border-radius: 5px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
 
     .selected-value{
         margin-left: 10px;
+        color: grey;
+        font-family: sans-serif;
+        font-size: 10pt;
+    }
+    .dropdown-button{
+        background-color: teal;
+        height: 15px;
+        width: 15px;
+        border-radius: 10px;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+    
+}
+.menu-item-inputbox{
+    border-radius:8px;
+    margin-left:10px;
+    width:230px; 
+    margin-top:10px;
+    height: 25px;
+    display: none;
+}
+.menu-item-active{
+    border-radius:8px;
+    margin-left:10px;
+    width:230px; 
+    margin-top:10px;
+    height: 25px;
+    display: block;
+}
+.Menu-variant-container{
+    width: 500px;
+    height: 25px;
+    border: 2px solid teal;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .selected-value{
+        margin-left: 10px;
+        color: grey;
+        font-family: sans-serif;
+        font-size: 10pt;
+    }
+    .dropdown-button{
+        background-color: teal;
+        height: 15px;
+        width: 15px;
+        border-radius: 10px;
+        margin-right: 10px;
+        cursor: pointer;
     }
 }

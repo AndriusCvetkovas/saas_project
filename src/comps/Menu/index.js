@@ -1,36 +1,58 @@
-import React from 'react'
+import React,{useState} from 'react'
 import MenuItems from '../Menu/MenuItems/index'
 
-function Menu({value, furniture_Category,droparea}){
-    var menu_container;
+function Menu({items,droparea,variant,placeholder,inputplaceholder}){
+    const [value , setValue] = useState(placeholder);
+    const [drop, setDrop] = useState(false);
+
+    var cn = "MenuItems-container"
+    var menu_style= "Menu-container"
+    var dropdown_button = "dropdown-button"
+    if(!drop){
+        cn = "MenuItems-container MenuItems-container_active"
+    }
+
 
     if (droparea == false){
-        menu_container = 'hide-MenuItems-container'
+        cn ="MenuItems-container"
+        dropdown_button = ""
     }
-    else {
-        menu_container = 'MenuItems-container'
+    else{
+        dropdown_button = "dropdown-button"
     }
+
+    if(variant){
+        cn = "MenuItems-variant-container"
+        menu_style = "Menu-variant-container"
+        if(!drop){
+            cn = "MenuItems-variant-container MenuItems-variant-container_active"
+        }
+    }
+
+   
     return (
         <div>
-            <div className="Menu-container">
-            <p className="selected-value">{value}</p> 
+            <div className={menu_style}>
+                <p className="selected-value">{value}</p> 
+                <div onClick={()=> {setDrop(!drop)}} className={dropdown_button}></div>
             </div>
-            <div className={menu_container}>
+            <div className={cn}>
                 <div className="dropdown-area">
                     {
-                        furniture_Category.map((o,i)=>{
+                        items.map((o,i)=>{
                             return <MenuItems {...o} />
                         })
                     }
                 </div>
+                    <input type="text" placeholder={inputplaceholder} className="menu-item-inputbox"></input>
+                
             </div>
         </div>
     )
 }
 Menu.defaultProps = {
-    value:"--",
-    furniture_Category:[{
-        CategoryTitle:"CategoryTitle1"
+    items:[{
+        CategoryTitle:"CategoryTitle1",
     }, {
         CategoryTitle:"CategoryTitle2"
     }, {
@@ -41,6 +63,9 @@ Menu.defaultProps = {
         CategoryTitle:"CategoryTitle5"
     }],
      droparea:false,
+     variant:false,
+     placeholder:"",
+     inputplaceholder:""
 }
 
 export default Menu;

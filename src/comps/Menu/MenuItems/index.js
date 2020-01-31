@@ -1,14 +1,15 @@
 import React from 'react'
 
-function MenuItems({CategoryTitle}){
+function MenuItems({CategoryTitle,onClick}){
     return (
-            <div className="dropdown-items">
+            <div onClick={onClick} className="dropdown-items">
                 {CategoryTitle}
             </div>
     )
 }
 MenuItems.defaultProps = {
-    CategoryTitle:"Default title"
+    CategoryTitle:"Default title",
+    onClick:()=>{},
 }
 
 export default MenuItems;
