@@ -6,22 +6,28 @@
 .itemContainer {
     flex: 1;
     @include flex();
-    padding: 10px;
     height: 130px;
-    border-radius: 20px;
+    border-radius: 15px;
     &:first-of-type {
         margin-bottom: 20px;
+    }
+    &:active {
+        background-color: white;
     }
     div {
         width: 200px;
         @include flex();
         justify-content: center;
         img {
-            background-color: grey;
-            width: 100px;
+            background-color: white;
+            width: 200px;
             height: 100px;
+            border-radius: 15px;
         }
     }
+}
+.selected {
+    background-color: white;
 }
 .itemSelected {
     background-color: '#FFFFFF';

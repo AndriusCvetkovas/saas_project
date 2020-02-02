@@ -20,7 +20,6 @@ export const BlueButton = () => {
 }
 export const ShadowBlueButton = () => {
     return <Button
-            
             type = 'shadowBlue'
     />
 }
