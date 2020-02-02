@@ -13,10 +13,22 @@ function List({items}){
 
 List.defaultProps = {
     items:[{
-        itemTitle:'Item 1'
+        itemTitle:'Item 1',
+        itemImage: '',
+        itemSKU: 'MTRS-M1',
+        itemCategory: 'Sofa',
+        itemBrand: 'Magniflex',
+        itemSeries: '-',
+        itemVarant: true
     },
     {
-        itemTitle:'Item 2'
+        itemTitle:'Item 2',
+        itemImage: '',
+        itemSKU: 'MTRS-M2',
+        itemCategory: 'Chair',
+        itemBrand: 'Magniflex',
+        itemSeries: 'Mono',
+        itemVarant: false
     },
     ]
 };

@@ -1,13 +1,26 @@
-.itemContainer {
-    flex: 1;
+@mixin flex(){
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+.itemContainer {
+    flex: 1;
+    @include flex();
     padding: 10px;
     height: 130px;
     border-radius: 20px;
     &:first-of-type {
         margin-bottom: 20px;
+    }
+    div {
+        width: 200px;
+        @include flex();
+        justify-content: center;
+        img {
+            background-color: grey;
+            width: 100px;
+            height: 100px;
+        }
     }
 }
 .itemSelected {
