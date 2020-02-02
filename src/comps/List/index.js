@@ -14,7 +14,7 @@ function List({items, orders, i}){
         return(
             <div className='container'>
                 {orders.map((o, i)=>{
-                        return <OrderCard {...o}/>
+                        return <ItemCard {...o}/>
                 })}
             </div>
         )
