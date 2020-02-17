@@ -1,14 +1,33 @@
-.itemContainer {
-    flex: 1;
+@mixin flex(){
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 10px;
+}
+.itemContainer {
+    flex: 1;
+    @include flex();
     height: 130px;
-    border-radius: 20px;
+    border-radius: 15px;
     &:first-of-type {
         margin-bottom: 20px;
     }
+    &:active {
+        background-color: white;
+    }
+    div {
+        width: 200px;
+        @include flex();
+        justify-content: center;
+        img {
+            background-color: white;
+            width: 200px;
+            height: 100px;
+            border-radius: 15px;
+        }
+    }
+}
+.selected {
+    background-color: white;
 }
 .itemSelected {
     background-color: '#FFFFFF';
