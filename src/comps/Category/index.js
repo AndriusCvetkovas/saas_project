@@ -1,11 +1,8 @@
 import React from 'react';
 import CategoryCard from './CategoryCard';
 
-function Category({titles, boxed}){
+function Category({titles}){
     var cn = 'category_container';
-    if(boxed){
-        cn = 'category_container_boxed';
-    }
         return(
             <div className={cn}>
                 
