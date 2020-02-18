@@ -5,11 +5,12 @@ function Menu({items,droparea,variant,placeholder,inputplaceholder}){
     const [value , setValue] = useState(placeholder);
     const [drop, setDrop] = useState(false);
 
-    var cn = "MenuItems-container"
+    var cn = "MenuItems-container MenuItems-container_active"
     var menu_style= "Menu-container"
     var dropdown_button = "dropdown-button"
+    
     if(!drop){
-        cn = "MenuItems-container MenuItems-container_active"
+        cn = "MenuItems-container"
     }
 
 
@@ -40,7 +41,10 @@ function Menu({items,droparea,variant,placeholder,inputplaceholder}){
                 <div className="dropdown-area">
                     {
                         items.map((o,i)=>{
-                            return <MenuItems {...o} />
+                            return <MenuItems {...o} 
+                                    setValue={setValue} 
+                                    drop={drop}
+                                    setDrop={setDrop}/>
                         })
                     }
                 </div>
