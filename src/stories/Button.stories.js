@@ -43,7 +43,7 @@ export const WideBorderBlueButton = () => {
 }
 export const WideBlueShadowButton = () => {
     return <Button
-            type='blue'
+            type='shadowBlue'
             wide={true}
     />
 }

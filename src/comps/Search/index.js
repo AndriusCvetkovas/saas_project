@@ -16,6 +16,7 @@ function Search({shadow, wide, showplaceholder, placeholder}){
     return(
         <div>
             <input className={cn} type='text' placeholder={ph} ></input>
+            <img src={require('../../imgs/icon-search.png')} className='icon'/>
         </div>
     )
 }

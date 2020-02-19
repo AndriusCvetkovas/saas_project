@@ -15,7 +15,7 @@ function Button({type, wide, text}){
         }
     }
     if(type === 'shadowBlue'){
-        cn = 'button button_blue shadow'
+        cn = 'button button_blue button_shadow'
         if(wide === true){
             cn += ' wide';
         }

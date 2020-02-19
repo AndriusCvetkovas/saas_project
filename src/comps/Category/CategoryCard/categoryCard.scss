@@ -5,9 +5,14 @@
 }
 
 .categoryCard_container {
-    flex: 1;
     @include flex();
     width: 200px;
+    justify-content: center;
+    &:first-of-type {
+        justify-content: start;
+        width: 150px;
+        margin: 0px;
+    }
 }
 .title_category {
     font-size: 16px;
