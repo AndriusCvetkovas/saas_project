@@ -1,8 +1,12 @@
-import React from 'react'
+import React, {useState} from 'react'
 
-function MenuItems({CategoryTitle,onClick}){
+function MenuItems({CategoryTitle,onClick,setValue,setDrop,drop}){
     return (
-            <div onClick={onClick} className="dropdown-items">
+            <div onClick={()=>{
+                setValue(CategoryTitle)
+                setDrop(!drop)
+            }} 
+            className="dropdown-items">
                 {CategoryTitle}
             </div>
     )
