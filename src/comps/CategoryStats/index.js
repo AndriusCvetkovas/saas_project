@@ -11,8 +11,8 @@ function CategoryStats({itemTitle1, itemTitle2, value1, value2, month1 ,month2})
                 radius = {20}
                 startAngle = {270}
                 data={[
-                    { title: 'One', value: value1, color: '#0096A9' },
-                    { title: 'Two', value: value2, color: '#D8D8D8' },
+                    { title: month1, value: value1, color: '#0096A9' },
+                    { title: month2, value: value2, color: '#D8D8D8' },
                 ]}
             />
             <div className='value_wrapper'>
