@@ -25,7 +25,7 @@ function List({items, orders, i}){
 List.defaultProps = {
     items:[{
         itemTitle:'Item 1',
-        itemImage: '',
+        itemImage: "require('../../../imgs/furnitures/chair-01.jpeg')",
         itemCol1: 'nn',
         itemCol2: 'nn',
         itemCol3: 'nn',
@@ -34,7 +34,7 @@ List.defaultProps = {
     },
     {
         itemTitle:'Item 2',
-        itemImage: '',
+        itemImage: "require('../../../imgs/furnitures/chair-01.jpeg')",
         itemCol1: 'nn',
         itemCol2: 'nn',
         itemCol3: 'nn',

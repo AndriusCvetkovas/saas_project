@@ -3,8 +3,13 @@
 @import './comps/List/list.scss';
 @import './comps/Menu/Menu.scss';
 @import './comps/Search/search.scss';
+@import './comps/Modal/modal.scss';
+@import './comps/Category/category.scss';
+@import './comps/CategoryStats/categoryStats.scss';
+@import './comps/Header/header.scss';
 
 body {
   background-color: #F0F6F7;
+  font-family: 'Raleway', sans-serif;
 }
 

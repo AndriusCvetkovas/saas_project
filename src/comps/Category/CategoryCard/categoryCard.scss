@@ -1,0 +1,32 @@
+@mixin flex(){
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.categoryCard_container {
+    @include flex();
+    width: 200px;
+    justify-content: center;
+    &:first-of-type {
+        justify-content: start;
+        width: 150px;
+        margin: 0px;
+    }
+}
+.title_category {
+    font-size: 16px;
+    @include flex();
+    &:first-of-type {
+        font-size: 18px;
+        font-weight: bold;
+    }
+    img {
+        width: 12px;
+        height: 15px;
+        margin-right: 5px;
+    }
+    .hide {
+        display: none;
+    }
+}

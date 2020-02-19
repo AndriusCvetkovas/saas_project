@@ -4,13 +4,11 @@
     align-items: center;
 }
 .itemContainer {
-    flex: 1;
     @include flex();
-    height: 130px;
+    height: 150px;
     border-radius: 15px;
-    &:first-of-type {
-        margin-bottom: 20px;
-    }
+    margin-bottom: 20px;
+    
     &:active {
         background-color: white;
     }
@@ -18,11 +16,21 @@
         width: 200px;
         @include flex();
         justify-content: center;
+        &:first-of-type {
+            width: 150px;
+            justify-content: flex-start;
+        }
         img {
             background-color: white;
-            width: 200px;
-            height: 100px;
+            width: 150px;
+            height: 150px;
             border-radius: 15px;
+        }
+        .edit {
+            width: 30px;
+            height: auto;
+            border-radius: 0px;
+            background-color: transparent;
         }
     }
 }
