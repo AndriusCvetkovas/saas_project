@@ -2,6 +2,7 @@ import React from 'react';
 
 import './App.scss';
 import ProductPage from './pages/Product';
+import SalesPage from './pages/Sales';
 
 function App() {
   return (
