@@ -1,0 +1,131 @@
+.productP_wrapper{
+    margin-left: 39px;
+    margin-top: 39px;
+    overflow-y: auto;
+  }
+
+  .back-btn{
+      background-image: url(../../imgs/btn-back1.png);
+      height: 35px;
+      width: 28px;
+      background-repeat: no-repeat;
+      margin-top: 50px;
+  }
+
+  .Detail_container{
+      width: 70%;
+      height: 35%;
+      margin-top: 50px;
+      display: flex;
+
+    .image_holder{
+        height: 280px;
+        width: 280px;
+        border-radius: 15px;
+        background-color: white;
+        overflow: hidden;
+    }
+
+    .product_dimensions{
+        padding-left: 150px;
+
+        .dimension_inputs{
+            display: flex;
+            width: 350px;
+            overflow: hidden;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+  }
+
+.quantity_section{
+    position: relative;
+    top:40px;
+
+    .quantity_info{
+        display: flex;
+        align-items: center;
+        margin-top: -10px;
+    }
+}
+
+.selection_area{
+    height: 250px;
+    width: 350px;
+    .selection_line{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        overflow: visible;
+        max-height: 51px;
+    }
+}
+
+.textarea_container{
+    height: 120px;
+    width: 350px;
+    margin-top: 30px;
+
+    .textarea{
+        height: auto;
+        min-height: 120px;
+        width: 350px;
+        border-radius: 5px;
+        background-color: white;
+        position: relative;
+    }
+}
+
+.action_btns{
+    width: 70%;
+    margin-top: 80px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+  
+.right{
+    background-color: white;
+    width: 570px;
+    height: 435px;
+    margin-left: 40px;
+
+    .variant_button_cont{
+        display: flex;
+        width: 100%;
+        height: auto;
+
+        .button_cont{
+            height: auto;
+            width: auto;
+            position: relative;
+        
+            .delete_btn{
+                position: absolute;
+                top: 10px;
+                right: 5px;
+            }
+        }
+    }
+
+    .newoption_input{
+        display: flex;
+        align-items: center;
+        margin-top: -25px;
+    }
+    
+    .option_row{
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+}
+
+
+
+.right-disabled {
+    display: none
+}
+
+
