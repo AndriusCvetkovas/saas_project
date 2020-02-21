@@ -3,7 +3,7 @@
 .Menu-container{
     width: 250px;
     height: 25px;
-    border: 2px solid teal;
+    border: 2px solid #0096A9;
     border-radius: 5px;
     display: flex;
     justify-content: space-between;
@@ -12,11 +12,11 @@
     .selected-value{
         margin-left: 10px;
         color: grey;
-        font-family: sans-serif;
+        font-family: 'Raleway', sans-serif;
         font-size: 10pt;
     }
     .dropdown-button{
-        background-color: teal;
+        background-color: #0096A9;
         height: 15px;
         width: 15px;
         border-radius: 10px;
@@ -44,7 +44,7 @@
 .Menu-variant-container{
     width: 500px;
     height: 25px;
-    border: 2px solid teal;
+    border: 2px solid #0096A9;
     border-radius: 5px;
     display: flex;
     justify-content: space-between;
@@ -57,11 +57,72 @@
         font-size: 10pt;
     }
     .dropdown-button{
-        background-color: teal;
+        background-color: #0096A9;
         height: 15px;
         width: 15px;
         border-radius: 10px;
         margin-right: 10px;
         cursor: pointer;
+    }
+}
+
+.input_menu {
+    width: 78px;
+    height: 25px;
+    border: 2px solid #0096A9;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.quantity_input {
+    width: 60px;
+    height: 25px;
+    border: 2px solid #0096A9;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Small-Menu-container{
+    width: 200px;
+    height: 25px;
+    border: 2px solid #0096A9;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .selected-value{
+        margin-left: 10px;
+        color: grey;
+        font-family: 'Raleway', sans-serif;
+        font-size: 10pt;
+    }
+    .dropdown-button{
+        background-color: #0096A9;
+        height: 15px;
+        width: 15px;
+        border-radius: 10px;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+    
+}
+
+.cost-input{
+    width: 80px;
+    height: 25px;
+    border: 2px solid #0096A9;
+    border-radius: 5px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    .selected-value{
+        margin-right: 10px;
+        font-family: 'Raleway', sans-serif;
+        font-size: 10pt;
     }
 }

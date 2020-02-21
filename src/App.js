@@ -2,14 +2,15 @@ import React from 'react';
 
 import './App.scss';
 import ProductPage from './pages/Product';
+import AddProductPage from './pages/Add_Product'
 
 function App() {
   return (
-    <div className='main' style ={{display: 'flex', flexDirection: 'row'}}>
-      <div className="Nav" style = {{flex: 1, maxWidth: '240px', minWidth:'240px', height: '100', backgroundColor: 'white'}}>
+    <div className='main'>
+      <div className="Nav">
       </div>
-      <div className='solution_container' style ={{flex: 5}}>
-          <ProductPage/>
+      <div className='solution_container'>
+          <AddProductPage/>
       </div>
     </div>
   );

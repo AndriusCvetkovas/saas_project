@@ -1,4 +1,5 @@
 
+//Component stylesheets
 @import './comps/Button/button.scss';
 @import './comps/List/list.scss';
 @import './comps/Menu/Menu.scss';
@@ -8,8 +9,30 @@
 @import './comps/CategoryStats/categoryStats.scss';
 @import './comps/Header/header.scss';
 
+//Page stylesheets
+@import './pages/Add_Product/Add_Product.scss';
+
 body {
   background-color: #F0F6F7;
   font-family: 'Raleway', sans-serif;
+  
 }
+
+.main{
+  display: flex;
+  flex-direction: row;
+}
+
+.solution_container{
+  flex:5;
+  position: relative;
+}
+.Nav{
+  flex: 1;
+  background-color: white;
+  max-width: 240px;
+  min-width: 240px;
+
+}
+
 
