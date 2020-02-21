@@ -54,7 +54,8 @@ function ProductPage(){
             value1: 23334.44,
             value2: 12355.32,
             month1: 'June',
-            month2: 'July'
+            month2: 'July',
+            dollar: true
         },
         {
             itemTitle1: 'Bed',
@@ -62,7 +63,8 @@ function ProductPage(){
             value1: 15612.89,
             value2: 5000.5,
             month1: 'June',
-            month2: 'July'
+            month2: 'July',
+            dollar: true
         },
         {
             itemTitle1: 'Accessory',
@@ -70,7 +72,8 @@ function ProductPage(){
             value1: 14578.3,
             value2: 5659.5,
             month1: 'June',
-            month2: 'July'
+            month2: 'July',
+            dollar: true
         },
         {
             itemTitle1: 'Table/Desk',
@@ -78,7 +81,8 @@ function ProductPage(){
             value1: 13334.44,
             value2: 12355.32,
             month1: 'June',
-            month2: 'July'
+            month2: 'July',
+            dollar: true
         },
         {
             itemTitle1: 'Cabinet',
@@ -86,7 +90,8 @@ function ProductPage(){
             value1: 14334.44,
             value2: 8985.32,
             month1: 'June',
-            month2: 'July'
+            month2: 'July',
+            dollar: true
         },
     ]
     var items = [
