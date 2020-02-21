@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import MenuItems from '../Menu/MenuItems/index'
 
-function Menu({items,droparea,variant,placeholder,inputplaceholder}){
+function Menu({items,droparea,variant,placeholder,inputplaceholder,input,quanity_input,smalldrop,costinput}){
     const [value , setValue] = useState(placeholder);
     const [drop, setDrop] = useState(false);
 
@@ -10,13 +10,14 @@ function Menu({items,droparea,variant,placeholder,inputplaceholder}){
     var dropdown_button = "dropdown-button"
     
     if(!drop){
-        cn = "MenuItems-container"
+        cn = "MenuItems-container-false"
     }
 
 
     if (droparea == false){
-        cn ="MenuItems-container"
+        cn ="MenuItems-container-false"
         dropdown_button = ""
+        
     }
     else{
         dropdown_button = "dropdown-button"
@@ -30,6 +31,27 @@ function Menu({items,droparea,variant,placeholder,inputplaceholder}){
         }
     }
 
+    if(input){
+        menu_style ="input_menu"
+        cn = "MenuItems-container-false"
+    }
+
+    if(quanity_input){
+        menu_style ="quantity_input"
+        cn = "MenuItems-container-false"
+    }
+
+    if(smalldrop){
+        menu_style = "Small-Menu-container"
+        cn = "MenuItems-container-disabled-small"
+        if(drop == true){
+            cn = "MenuItems-container-active-small"
+        }
+    }
+
+    if(costinput){
+        menu_style = "cost-input"
+    }
    
     return (
         <div>
@@ -68,8 +90,12 @@ Menu.defaultProps = {
     }],
      droparea:false,
      variant:false,
+     input:false,
      placeholder:"",
-     inputplaceholder:""
+     inputplaceholder:"",
+     quanity_input:false,
+     smalldrop:false,
+     costinput:false
 }
 
 export default Menu;
