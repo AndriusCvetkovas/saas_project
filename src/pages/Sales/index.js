@@ -75,7 +75,7 @@ function SalesPage(){
             onClick:()=>{alert('Sort')}
         }
     ];
-    var items = [
+    var orders = [
         {
             itemTitle:'Item 1',
             itemCol0: <a href='#'>234535</a>,
@@ -128,7 +128,7 @@ function SalesPage(){
                 placeholder= 'Search orders with order#, customer information, SKU, etc.'
                 wide={true}
                 shadow={true}
-            /> 
+            />
             <Category
                 titles={titles}
             />
@@ -141,7 +141,7 @@ function SalesPage(){
                 titles={titlesSort}
             />
             <List
-                items = {items}
+                items = {orders}
                 i = {true}
             />
         </div>
