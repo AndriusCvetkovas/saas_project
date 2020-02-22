@@ -1,0 +1,44 @@
+@mixin flex(){
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.order_details_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .order_details_inner_box {
+        flex:1;
+        max-width: 235px;
+        min-width: 235px;
+        height: 200px;
+        border-radius: 20px;
+        background-color: #fff;
+        box-shadow: 0px 0px 17px -15px;
+        color: #838383;
+        margin-right: 26px;
+        padding-left: 20px;
+        padding-top: 10px;
+        h1 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        h2 {
+            font-size: 14px;
+            font-weight: normal;
+            margin-bottom: -5px;
+        }
+        .date {
+            font-size: 14px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+        .number {
+            margin-top: -10px;
+        }
+        .address {
+            width: 150px;
+        }
+    }
+}
