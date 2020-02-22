@@ -31,9 +31,11 @@ function ItemCard({itemId, itemCol0, itemCol1, itemCol2, itemCol3, itemCol4, ite
 
     var status = itemCol6 * 20;
 
+    var marginCol0 = 0;
     if(sales){
+        marginCol0 = 10;
         return(
-        <div className = {cn} onClick={()=>setS(!s)}>
+        <div className = {cn} onClick={()=>setS(!s)} style = {{paddingLeft: marginCol0}}>
             <div>
                 {itemCol0}
             </div>

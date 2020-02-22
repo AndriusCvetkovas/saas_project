@@ -51,7 +51,7 @@ function SalesPage(){
     var titlesSort = [
         {
             title: 'Order No.',
-            sort: false,
+            sort: true,
             
         },
         {
