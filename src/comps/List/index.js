@@ -31,16 +31,7 @@ List.defaultProps = {
         itemCol3: 'nn',
         itemCol4: 'nn',
         itemCol5: true,
-    },
-    {
-        itemTitle:'Item 2',
-        itemImage: "require('../../../imgs/furnitures/chair-01.jpeg')",
-        itemCol1: 'nn',
-        itemCol2: 'nn',
-        itemCol3: 'nn',
-        itemCol4: 'nn',
-        itemCol5: false,
-    },
+    }
     ]
 };
 

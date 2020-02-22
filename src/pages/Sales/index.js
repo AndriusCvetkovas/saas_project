@@ -1,10 +1,14 @@
 import React from 'react';
+import {useState} from 'react';
+
+
 import Header from '../../comps/Header';
 import Button from '../../comps/Button';
 import Search from '../../comps/Search';
 import Category from '../../comps/Category';
 import CategoryStats from '../../comps/CategoryStats';
 import List from '../../comps/List';
+import OrderDetails from '../../comps/OrderDetails';
 
 function SalesPage(){
     var titles = [{
@@ -75,44 +79,154 @@ function SalesPage(){
             onClick:()=>{alert('Sort')}
         }
     ];
+    var titlesSortItems = [
+        {
+            title: 'Order Item',
+            sort: false,
+            
+        },
+        {
+            title: 'SKU',
+            sort: true,
+            onClick:()=>{alert('Sort')},
+        },
+        {
+            title: 'Invoiced',
+            sort: true,
+            onClick:()=>{alert('Sort')}
+        },
+        {
+            title: 'Packed',
+            sort: true,
+            onClick:()=>{alert('Sort')}
+        },
+        {
+            title: 'Fulfiled',
+            sort: true,
+            onClick:()=>{alert('Sort')}
+        },
+        {
+            title: 'Paid',
+            sort: true,
+            onClick:()=>{alert('Sort')}
+        },
+        {
+            title: 'Amount',
+            sort: true,
+            onClick:()=>{alert('Sort')}
+        },
+        {
+            title: 'Total',
+            sort: true,
+            onClick:()=>{alert('Sort')}
+        }
+    ];
     var orders = [
         {
             itemTitle:'Item 1',
-            itemCol0: <a href='#'>234535</a>,
+            itemCol0: <a href='#' onClick={()=> setShowOrder(!showOrder)}>234535</a>,
             itemCol1: '02/02/20',
             itemCol2: 'Credit',
             itemCol3: '$ 500',
             itemCol4: '$ 1,500',
-            sales: true
+            sales: true,
+            orderNumber: '234535',
+            orderDate: '06 February 2020',
+            estimateDate: '22 February 2020',
+            customerName: 'Angela Jang',
+            phoneNumber: '778.798.3214',
+            customerAddress: '5089 Dominion street, Burnaby, V5G 1C8',
+            items: [
+                {
+                    itemId:'Item 1',
+                    itemCol0: <img src={require('../../imgs/furnitures/chair-01.jpeg')} alt={'chair'}></img>,
+                    itemCol1: 'MTRS-M1',
+                    itemCol2: 'Sofa',
+                    itemCol3: 'Magniflex',
+                    itemCol4: '-',
+                    itemCol5: true,
+                    itemCol6: 4,
+                    sales: false
+                },
+                {
+                    itemId:'Item 2',
+                    itemCol0: <img src={require('../../imgs/furnitures/chair-02.jpeg')} alt={'chair'}></img>,
+                    itemCol1: 'MTRS-M2',
+                    itemCol2: 'Chair',
+                    itemCol3: 'Magniflex',
+                    itemCol4: 'Mono',
+                    itemCol5: false,
+                    itemCol6: 3,
+                    sales: false
+                },
+                {
+                    itemId:'Item 2',
+                    itemCol0: <img src={require('../../imgs/furnitures/desk-01.jpeg')} alt={'desk'}></img>,
+                    itemCol1: 'MTRS-M2',
+                    itemCol2: 'Chair',
+                    itemCol3: 'Magniflex',
+                    itemCol4: 'Mono',
+                    itemCol5: false,
+                    itemCol6: 1,
+                    sales: false
+                }
+        ]
         },
         {
             itemId:'Item 2',
-            itemCol0: <a href='#'>234535</a>,
+            itemCol0: <a href='#' onClick={()=> setShowOrder(!showOrder)}>234535</a>,
             itemCol1: '02/02/20',
             itemCol2: 'Credit',
             itemCol3: '$ 500',
             itemCol4: '$ 1,500',
-            sales: true
+            sales: true,
+            orderNumber: '234535',
+            orderDate: '06 February 2020',
+            estimateDate: '22 February 2020',
+            customerName: 'Angela Jang',
+            phoneNumber: '778.798.3214',
+            customerAddress: '5089 Dominion street, Burnaby, V5G 1C8'
         },
         {
             itemId:'Item 2',
-            itemCol0: <a href='#'>234535</a>,
+            itemCol0: <a href='#' onClick={()=> setShowOrder(!showOrder)}>234535</a>,
             itemCol1: '02/02/20',
             itemCol2: 'Credit',
             itemCol3: '$ 500',
             itemCol4: '$ 1,500',
-            sales: true
+            sales: true,
+            orderNumber: '234535',
+            orderDate: '02 February 2020',
+            estimateDate: '09 February 2020',
+            customerName: 'Jeff Bezos',
+            phoneNumber: '777.727.7707',
+            customerAddress: '5555 Dunbar street, Vancouver, BC V6T 1C8'
         },
         {
             itemId:'Item 3',
-            itemCol0: <a href='#'>234535</a>,
+            itemCol0: <a href='#' onClick={()=> setShowOrder(!showOrder)}>234535</a>,
             itemCol1: '02/02/20',
             itemCol2: 'Credit',
             itemCol3: '$ 500',
             itemCol4: '$ 1,500',
-            sales: true
+            sales: true,
+            orderNumber: '234535',
+            orderDate: '02 February 2020',
+            estimateDate: '09 February 2020',
+            customerName: 'Jeff Bezos',
+            phoneNumber: '777.727.7707',
+            customerAddress: '5555 Dunbar street, Vancouver, BC V6T 1C8'
         },
     ];
+
+
+    var hide = '';
+    var show = 'hide';
+    const [showOrder, setShowOrder] = useState(false);
+    if(showOrder){
+        hide = 'hide';
+        show = '';
+    }
     return(
         <div style = {{marginLeft: '39px', marginTop: '39px', overflowY: 'auto'}}>
             <Header 
@@ -129,21 +243,35 @@ function SalesPage(){
                 wide={true}
                 shadow={true}
             />
-            <Category
-                titles={titles}
-            />
-            <div className='stats_container' style = {{display: 'flex', flexDirection:'row'}}>
-            {cat.map((o, i)=>{
-                        return <CategoryStats {...o}/>
-                })}
+            <div className = {hide}>
+                <Category
+                    titles={titles}
+                />
+                <div className='stats_container' style = {{display: 'flex', flexDirection:'row'}}>
+                {cat.map((o, i)=>{
+                            return <CategoryStats {...o}/>
+                    })}
+                </div>
+                <Category
+                    titles={titlesSort}
+                />
+                <List
+                    items = {orders}
+                    i = {true}
+                />
             </div>
-            <Category
-                titles={titlesSort}
-            />
-            <List
-                items = {orders}
-                i = {true}
-            />
+            <div className = {show}>
+                <OrderDetails 
+                />
+                <Category
+                    titles={titlesSortItems}
+                />
+                <List
+                    items = {orders[0].items}
+                    i = {true}
+                />
+            </div>
+            
         </div>
     )
 }
