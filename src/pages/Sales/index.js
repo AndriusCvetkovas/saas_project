@@ -4,6 +4,7 @@ import Button from '../../comps/Button';
 import Search from '../../comps/Search';
 import Category from '../../comps/Category';
 import CategoryStats from '../../comps/CategoryStats';
+import List from '../../comps/List';
 
 function SalesPage(){
     var titles = [{
@@ -46,7 +47,72 @@ function SalesPage(){
             month2: 'Ship',
             dollar: false
         }
-    ]
+    ];
+    var titlesSort = [
+        {
+            title: 'Order No.',
+            sort: false,
+            
+        },
+        {
+            title: 'Order Date',
+            sort: true,
+            onClick:()=>{alert('Sort')},
+        },
+        {
+            title: 'Payment',
+            sort: true,
+            onClick:()=>{alert('Sort')}
+        },
+        {
+            title: 'Amount',
+            sort: true,
+            onClick:()=>{alert('Sort')}
+        },
+        {
+            title: 'Total',
+            sort: true,
+            onClick:()=>{alert('Sort')}
+        }
+    ];
+    var items = [
+        {
+            itemTitle:'Item 1',
+            itemCol0: <a href='#'>234535</a>,
+            itemCol1: '02/02/20',
+            itemCol2: 'Credit',
+            itemCol3: '$ 500',
+            itemCol4: '$ 1,500',
+            sales: true
+        },
+        {
+            itemId:'Item 2',
+            itemCol0: <a href='#'>234535</a>,
+            itemCol1: '02/02/20',
+            itemCol2: 'Credit',
+            itemCol3: '$ 500',
+            itemCol4: '$ 1,500',
+            sales: true
+        },
+        {
+            itemId:'Item 2',
+            itemCol0: <a href='#'>234535</a>,
+            itemCol1: '02/02/20',
+            itemCol2: 'Credit',
+            itemCol3: '$ 500',
+            itemCol4: '$ 1,500',
+            sales: true
+        },
+        {
+            itemId:'Item 3',
+            itemCol0: <a href='#'>234535</a>,
+            itemCol1: '02/02/20',
+            itemCol2: 'Credit',
+            itemCol3: '$ 500',
+            itemCol4: '$ 1,500',
+            sales: true
+        },
+    ];
     return(
         <div style = {{marginLeft: '39px', marginTop: '39px', overflowY: 'auto'}}>
             <Header 
@@ -71,6 +137,13 @@ function SalesPage(){
                         return <CategoryStats {...o}/>
                 })}
             </div>
+            <Category
+                titles={titlesSort}
+            />
+            <List
+                items = {items}
+                i = {true}
+            />
         </div>
     )
 }

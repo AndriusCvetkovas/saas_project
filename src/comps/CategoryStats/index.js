@@ -3,10 +3,12 @@ import PieChart from 'react-minimal-pie-chart';
 
 function CategoryStats({itemTitle1, itemTitle2, value1, value2, month1 ,month2, dollar}){
     var sign = '';
-    var margin = -70;
+    var marginT = -75;
+    var marginB = -60;
     if(dollar){
         sign = '$';
-        margin = -90;
+        marginT = -90;
+        marginB = -70;
 
     };
     return(
@@ -14,7 +16,7 @@ function CategoryStats({itemTitle1, itemTitle2, value1, value2, month1 ,month2, 
             <h1>{itemTitle1}</h1>
             <h2>{itemTitle2}</h2>
             <PieChart
-                style = {{marginTop: margin, marginBottom: -70}}
+                style = {{marginTop: marginT, marginBottom: marginB}}
                 radius = {20}
                 startAngle = {270}
                 data={[

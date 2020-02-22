@@ -96,44 +96,48 @@ function ProductPage(){
     ]
     var items = [
         {
-            itemTitle:'Item 1',
-            itemImage: require('../../imgs/furnitures/chair-01.jpeg'),
+            itemId:'Item 1',
+            itemCol0: <img src={require('../../imgs/furnitures/chair-01.jpeg')} alt={'chair'}></img>,
             itemCol1: 'MTRS-M1',
             itemCol2: 'Sofa',
             itemCol3: 'Magniflex',
             itemCol4: '-',
             itemCol5: true,
             itemCol6: 4,
+            sales: false
         },
         {
-            itemTitle:'Item 2',
-            itemImage: require('../../imgs/furnitures/chair-02.jpeg'),
+            itemId:'Item 2',
+            itemCol0: <img src={require('../../imgs/furnitures/chair-02.jpeg')} alt={'chair'}></img>,
             itemCol1: 'MTRS-M2',
             itemCol2: 'Chair',
             itemCol3: 'Magniflex',
             itemCol4: 'Mono',
             itemCol5: false,
             itemCol6: 3,
+            sales: false
         },
         {
-            itemTitle:'Item 2',
-            itemImage: require('../../imgs/furnitures/desk-01.jpeg'),
+            itemId:'Item 2',
+            itemCol0: <img src={require('../../imgs/furnitures/desk-01.jpeg')} alt={'desk'}></img>,
             itemCol1: 'MTRS-M2',
             itemCol2: 'Chair',
             itemCol3: 'Magniflex',
             itemCol4: 'Mono',
             itemCol5: false,
             itemCol6: 1,
+            sales: false
         },
         {
-            itemTitle:'Item 2',
-            itemImage: require('../../imgs/furnitures/sofa-01.jpg'),
+            itemId:'Item 2',
+            itemCol0: <img src={require('../../imgs/furnitures/sofa-01.jpg')} alt={'sofa'}></img>,
             itemCol1: 'MTRS-M2',
             itemCol2: 'Chair',
             itemCol3: 'Magniflex',
             itemCol4: 'Mono',
             itemCol5: false,
             itemCol6: 3,
+            sales: false
         },
     ];
 

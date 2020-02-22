@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Line} from 'rc-progress';
 import Button from '../../Button';
 import { findByLabelText } from '@testing-library/react';
-function ItemCard({itemTitle, itemImage, itemCol1, itemCol2, itemCol3, itemCol4, itemCol5, itemCol6}){
+function ItemCard({itemId, itemCol0, itemCol1, itemCol2, itemCol3, itemCol4, itemCol5, itemCol6, sales}){
     var varant = '';
     var cn = 'itemContainer';
     if(itemCol5){
@@ -27,13 +27,35 @@ function ItemCard({itemTitle, itemImage, itemCol1, itemCol2, itemCol3, itemCol4,
                 text = 'Order'
             />
         color = '#FF5F5F';
-    }
+    };
+
     var status = itemCol6 * 20;
-    console.log(status);
+
+    if(sales){
+        return(
+        <div className = {cn} onClick={()=>setS(!s)}>
+            <div>
+                {itemCol0}
+            </div>
+            <div>
+                {itemCol1}
+            </div>
+            <div>
+                {itemCol2}
+            </div>
+            <div>
+                {itemCol3}
+            </div>
+            <div>
+                {itemCol4}
+            </div>
+        </div>
+        )
+    }else {
     return(
         <div className = {cn} onClick={()=>setS(!s)}>
             <div>
-                <img src={itemImage} alt={itemTitle}></img>
+                {itemCol0}
             </div>
             <div>
                 {itemCol1}
@@ -60,6 +82,7 @@ function ItemCard({itemTitle, itemImage, itemCol1, itemCol2, itemCol3, itemCol4,
             </div>
         </div>
     )
+}
 };
 
 ItemCard.defaultProps = {
