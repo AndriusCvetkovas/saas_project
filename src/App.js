@@ -2,7 +2,8 @@ import React from 'react';
 
 import './App.scss';
 import ProductPage from './pages/Product';
-import AddProductPage from './pages/Add_Product'
+import AddProductPage from './pages/Add_Product';
+import AddOrders from './pages/Add_Orders';
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
       <div className="Nav">
       </div>
       <div className='solution_container'>
-          <AddProductPage/>
+          <AddOrders/>
       </div>
     </div>
   );
