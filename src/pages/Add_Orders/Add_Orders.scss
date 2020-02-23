@@ -1,0 +1,120 @@
+.search-area{
+    width: 82%;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.info-box{
+    background-color: white;
+    width: 82%;
+    height: 150px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+
+    .info-row{
+        width: 85%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+    }
+}
+
+.big-info-box{
+    background-color: white;
+    width: 82%;
+    height: 200px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    border-radius: 10px;
+    
+    .info-row{
+        width: 85%;
+        height: auto;
+       
+    }
+
+    .item-row{
+        width: 85%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+    
+    }
+}
+
+.Summary-box{
+    width: 82%;
+    height: 250px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+
+    .message-box{
+        background-color: white;
+        height: 100%;
+        width: 65%;
+        border-radius: 10px;
+
+        .message{
+            border: 0;
+            width: 95%;
+            height: auto;
+            font-size: 15pt;
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+    }
+    .summary-cost-box{
+        background-color: white;
+        height: 100%;
+        width: 30%;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+
+        .summary-info{
+            position: absolute;
+            left: 10%;
+            width: 80%;
+
+            p {
+                font-size: 15pt;
+                color: darkgray;
+            }
+
+            .summary-row{
+                width: 100%;
+                height: 50px;
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+
+    }
+}
+
+.bottom-buttons{
+    width: 82%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: flex-end;
+
+    * {
+        margin-left: 45px;
+    }
+}

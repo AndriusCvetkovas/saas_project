@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import MenuItems from '../Menu/MenuItems/index'
 
-function Menu({items,droparea,variant,placeholder,inputplaceholder,input,quanity_input,smalldrop,costinput}){
+function Menu({items,droparea,variant,placeholder,inputplaceholder,input,quanity_input,smalldrop,costinput,type}){
     const [value , setValue] = useState(placeholder);
     const [drop, setDrop] = useState(false);
 
@@ -52,11 +52,40 @@ function Menu({items,droparea,variant,placeholder,inputplaceholder,input,quanity
     if(costinput){
         menu_style = "cost-input"
     }
+
+    if(type == "fat menu"){
+        menu_style = "fat-menu"
+    }
+
+    if(type == "small-quantity-input"){
+        menu_style = "small-quantity-input"
+    }
+
+    var currency = "";
+    if(type == "Price Menu"){
+        menu_style = "price-menu"
+        currency = "currency";
+    } else {
+        currency = "currency-disabled";
+    }
+
+    var discount = "";
+    if(type == "discount Menu"){
+        menu_style = "discount-menu"
+        discount = "discount";
+    } else {
+        discount = "discount-disabled";
+    }
+
+
+ 
    
     return (
         <div>
             <div className={menu_style}>
-                <p className="selected-value">{value}</p> 
+                <p className={currency}>$</p>
+                <input className="selected-value" type='text' placeholder={value} ></input>
+                <p className={discount}>%</p>
                 <div onClick={()=> {setDrop(!drop)}} className={dropdown_button}></div>
             </div>
             <div className={cn}>
@@ -95,7 +124,8 @@ Menu.defaultProps = {
      inputplaceholder:"",
      quanity_input:false,
      smalldrop:false,
-     costinput:false
+     costinput:false,
+     type:""
 }
 
 export default Menu;

@@ -13,7 +13,7 @@
     display: none;
 }
 .MenuItems-container_active {
-    height: 200px;
+    height: auto;
     width: 250px;
     background-color: white;
     border-radius: 5px;
@@ -21,6 +21,7 @@
     box-shadow: inset 0 0 1px #000000;
     display: block;
     position: absolute;
+    z-index: 99;
 }
 .MenuItems-addItem-container_active {
     height: 250px;
@@ -55,7 +56,8 @@
 .dropdown-area{
     width: 90%;
     position: relative;
-    top: 10px; 
+    top: 10px;
+    margin-bottom: 20px; 
 }
 .dropdown-items{
     margin-left: 10px;
