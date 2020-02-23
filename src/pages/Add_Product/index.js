@@ -92,7 +92,7 @@ function AddProductPage(){
     }
 
     return (
-        <div className="productP_wrapper">
+        <div className="wrapper">
             <Header 
                 title={'Inventory/Overview/Add Product'} 
             />

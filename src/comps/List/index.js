@@ -1,5 +1,6 @@
 import React from 'react';
 import ItemCard from './ItemCard';
+import ItemCardStatus from './ItemCardStatus';
 
 function List({items, orders, i}){
     if(i){
@@ -13,8 +14,8 @@ function List({items, orders, i}){
     } else {
         return(
             <div className='container'>
-                {orders.map((o, i)=>{
-                        return <ItemCard {...o}/>
+                {items.map((o, i)=>{
+                        return <ItemCardStatus {...o}/>
                 })}
             </div>
         )

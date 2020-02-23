@@ -9,6 +9,7 @@
     border-radius: 15px;
     margin-bottom: 20px;
     width: min-content;
+    margin-left: 0px;
     &:active {
         background-color: white;
     }
@@ -31,6 +32,10 @@
             height: auto;
             border-radius: 0px;
             background-color: transparent;
+        }
+        .status {
+            width: 34px;
+            height: 34px;
         }
     }
 }

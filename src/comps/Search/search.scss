@@ -1,7 +1,11 @@
-$r: 50px;
+$r: 40px;
 .input {
     border-radius: $r;
     border: 0;
+    font-size: 18px;
+}
+::placeholder {
+    color: #aaaaaa;
 }
 .shadow {
     box-shadow: 1px 3px 17px rgba(43, 43, 43, 0.0275623);

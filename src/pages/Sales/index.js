@@ -136,39 +136,39 @@ function SalesPage(){
             customerName: 'Angela Jang',
             phoneNumber: '778.798.3214',
             customerAddress: '5089 Dominion street, Burnaby, V5G 1C8',
-            items: [
+            itemDetails: [
                 {
                     itemId:'Item 1',
+                    itemCol0: <img src={require('../../imgs/furnitures/sofa-01.jpg')} alt={'chair'}></img>,
+                    itemCol1: 'MTRS-M-CC12KSP-1',
+                    invoiced: true,
+                    packed: true,
+                    fullfilled: true,
+                    paid: true,
+                    amount: '$500',
+                    total: '$500',
+                },
+                {
+                    itemId:'Item 2',
                     itemCol0: <img src={require('../../imgs/furnitures/chair-01.jpeg')} alt={'chair'}></img>,
                     itemCol1: 'MTRS-M1',
-                    itemCol2: 'Sofa',
-                    itemCol3: 'Magniflex',
-                    itemCol4: '-',
-                    itemCol5: true,
-                    itemCol6: 4,
-                    sales: false
+                    invoiced: true,
+                    packed: false,
+                    fullfilled: false,
+                    paid: true,
+                    amount: '$1500',
+                    total: '$1500',
                 },
                 {
-                    itemId:'Item 2',
-                    itemCol0: <img src={require('../../imgs/furnitures/chair-02.jpeg')} alt={'chair'}></img>,
-                    itemCol1: 'MTRS-M2',
-                    itemCol2: 'Chair',
-                    itemCol3: 'Magniflex',
-                    itemCol4: 'Mono',
-                    itemCol5: false,
-                    itemCol6: 3,
-                    sales: false
-                },
-                {
-                    itemId:'Item 2',
-                    itemCol0: <img src={require('../../imgs/furnitures/desk-01.jpeg')} alt={'desk'}></img>,
-                    itemCol1: 'MTRS-M2',
-                    itemCol2: 'Chair',
-                    itemCol3: 'Magniflex',
-                    itemCol4: 'Mono',
-                    itemCol5: false,
-                    itemCol6: 1,
-                    sales: false
+                    itemId:'Item 3',
+                    itemCol0: <img src={require('../../imgs/furnitures/sofa-02.jpeg')} alt={'desk'}></img>,
+                    itemCol1: '920-123',
+                    invoiced: false,
+                    packed: false,
+                    fullfilled: false,
+                    paid: true,
+                    amount: '$1500',
+                    total: '$1500',
                 }
         ]
         },
@@ -267,8 +267,8 @@ function SalesPage(){
                     titles={titlesSortItems}
                 />
                 <List
-                    items = {orders[0].items}
-                    i = {true}
+                    items = {orders[0].itemDetails}
+                    i = {false}
                 />
             </div>
             

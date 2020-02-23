@@ -2,13 +2,15 @@ import React, {useState} from 'react';
 import {Line} from 'rc-progress';
 import Button from '../../Button';
 import { findByLabelText } from '@testing-library/react';
-function ItemCard({itemId, itemCol0, itemCol1, itemCol2, itemCol3, itemCol4, itemCol5, itemCol6, sales}){
+function ItemCard({itemId, itemCol0, itemCol1, itemCol2, itemCol3, itemCol4, itemCol5, itemCol6, itemCol7, sales}){
     var varant = '';
     var cn = 'itemContainer';
-    if(itemCol5){
+    if(itemCol5 == true){
         varant = 'Yes';
-    }else {
+    }else if(itemCol5 == false) {
         varant = 'No';
+    }else {
+        varant = itemCol5;
     };
 
     const [s, setS] = useState(false)
@@ -29,13 +31,14 @@ function ItemCard({itemId, itemCol0, itemCol1, itemCol2, itemCol3, itemCol4, ite
         color = '#FF5F5F';
     };
 
+    
+    
     var status = itemCol6 * 20;
-
     var marginCol0 = 0;
     if(sales){
         marginCol0 = 10;
         return(
-        <div className = {cn} onClick={()=>setS(!s)} style = {{paddingLeft: marginCol0}}>
+        <div className = {cn} onClick={()=>setS(!s)} >
             <div>
                 {itemCol0}
             </div>
@@ -50,6 +53,15 @@ function ItemCard({itemId, itemCol0, itemCol1, itemCol2, itemCol3, itemCol4, ite
             </div>
             <div>
                 {itemCol4}
+            </div>
+            <div>
+                {itemCol5}
+            </div>
+            <div>
+                {itemCol6}
+            </div>
+            <div>
+                {itemCol7}
             </div>
         </div>
         )
