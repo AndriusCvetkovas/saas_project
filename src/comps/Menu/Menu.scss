@@ -15,6 +15,7 @@
         font-family: 'Raleway', sans-serif;
         font-size: 10pt;
         border: 0;
+        background-color: inherit;
     }
     .dropdown-button{
         background-color: #0096A9;
@@ -76,6 +77,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    .selected-value{
+        font-family: 'Raleway', sans-serif;
+        font-size: 10pt;
+        border: 0;
+        width: 40px;
+        background-color: #F0F6F7;
+    }
 }
 .quantity_input {
     width: 60px;
@@ -85,6 +94,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    .selected-value{
+        font-family: 'Raleway', sans-serif;
+        font-size: 10pt;
+        border: 0;
+        width: 30px;
+        background-color: #F0F6F7;
+    }
 }
 
 .Small-Menu-container{
@@ -128,6 +145,7 @@
         font-family: 'Raleway', sans-serif;
         font-size: 10pt;
         border: 0;
+        width: 40px;
     }
 }
 

@@ -11,7 +11,7 @@ function App() {
       <div className="Nav">
       </div>
       <div className='solution_container'>
-          <AddOrders/>
+          <AddProductPage/>
       </div>
     </div>
   );
