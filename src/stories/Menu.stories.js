@@ -2,7 +2,6 @@ import React from 'react'
 import '../App.scss'
 
 import Menu from '../comps/Menu'
-import MenuItems from '../comps/Menu/MenuItems'
 
 export default {
     title:"Menu",
