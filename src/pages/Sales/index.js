@@ -9,7 +9,8 @@ import Category from '../../comps/Category';
 import CategoryStats from '../../comps/CategoryStats';
 import List from '../../comps/List';
 import OrderDetails from '../../comps/OrderDetails';
-
+import PaymentInfo from '../../comps/PaymentInfo';
+import Notes from '../../comps/Notes';
 function SalesPage(){
     var titles = [{
         title: 'Category',
@@ -270,6 +271,24 @@ function SalesPage(){
                     items = {orders[0].itemDetails}
                     i = {false}
                 />
+                <div style={{ display: 'flex', flexDirection: 'row', marginBottom: 20}}>
+                    <Notes
+                        content =''
+                        placeholder = 'Delivery notes'
+                        />
+                    <PaymentInfo
+                        discount = '$ 0'
+                        subtotal = '$ 3,500'
+                        gst = '$ 175'
+                        pst= '$ 245'
+                        shipping= '$ 100'
+                        shippingGST= '$ 5'
+                        total= '$ 7,525'
+                        paid= '$ 7,525'
+                    />
+                    
+                </div>
+                
             </div>
             
         </div>
