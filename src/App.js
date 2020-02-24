@@ -28,7 +28,6 @@ function App() {
             <AddOrders />
           </Route>
         </Switch>
-          
       </div>
     </div>
     </BrowserRouter>
