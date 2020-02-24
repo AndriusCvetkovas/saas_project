@@ -11,6 +11,7 @@ import List from '../../comps/List';
 import OrderDetails from '../../comps/OrderDetails';
 import PaymentInfo from '../../comps/PaymentInfo';
 import Notes from '../../comps/Notes';
+import { Link } from "react-router-dom";
 function SalesPage(){
     var titles = [{
         title: 'Category',
@@ -233,11 +234,13 @@ function SalesPage(){
             <Header 
                 title={'Sales/Orders'} 
             />
-            <Button
-                type='shadowBlue'
-                wide={true}
-                text={'+ Add Orders'}
-            />
+            <Link to='/addOrder'>
+                <Button 
+                    type='shadowBlue'
+                    wide={true}
+                    text={'+ Add Orders'}
+                />
+            </Link>
             <Search
                 showplaceholder={true}
                 placeholder= 'Search orders with order#, customer information, SKU, etc.'

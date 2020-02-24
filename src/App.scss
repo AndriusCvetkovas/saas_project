@@ -30,7 +30,7 @@ body {
 .solution_container{
   flex:5;
   position: relative;
-  margin-left: 340px;
+  margin-left: 240px;
 }
 .Nav{
   flex: 1;
@@ -65,18 +65,31 @@ body {
     justify-content: flex-start;
     align-items: flex-start;
     width: 50%;
-    div {
+    div, a {
       font-size: 14px;
       margin-top: 10px;
       margin-bottom: 10px;
       width: 100px;
     }
-    &:hover {
-      cursor: pointer;
+    a {
+      text-decoration: none;
+      &:hover {
+        cursor: pointer;
+      }
+      &:visited {
+        color: black;
+      }
+      &:active {
+        font-weight: bold;
+      }
     }
+    
   }
 }
 .hide {
   display: none;
+}
+a {
+  text-decoration: none;
 }
 

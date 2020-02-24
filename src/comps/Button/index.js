@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Button({type, wide, text}){
+function Button({type, wide, text, onClick}){
     var cn = 'button';
     if(type === 'blue'){
         cn = 'button button_blue';
@@ -25,7 +25,7 @@ function Button({type, wide, text}){
     }
 
     return (
-    <button className={cn}>{text}</button>
+    <button className={cn} onClick={onClick}>{text}</button>
     )
 }
 

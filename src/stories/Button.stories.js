@@ -16,22 +16,26 @@ export const BlueButton = () => {
     return <Button
             text='Add'
             type = 'blue'
+            onClick ={()=>{alert('Sort')}}
     />
 }
 export const ShadowBlueButton = () => {
     return <Button
             type = 'shadowBlue'
+            onClick ={()=>{alert('Sort')}}
     />
 }
 export const BlueBorderButton = () => {
     return <Button
             type='borderBlue'
+            onClick ={()=>{alert('Sort')}}
     />
 }
 export const WideBlueButton = () => {
     return <Button
             type='blue'
             wide={true}
+            onClick ={()=>{alert('Sort')}}
     />
 }
 export const WideBorderBlueButton = () => {
@@ -39,17 +43,20 @@ export const WideBorderBlueButton = () => {
             type='borderBlue'
             text='add'
             wide={true}
+            onClick ={()=>{alert('Sort')}}
     />
 }
 export const WideBlueShadowButton = () => {
     return <Button
             type='shadowBlue'
             wide={true}
+            onClick ={()=>{alert('Sort')}}
     />
 }
 export const DeleteButton = () => {
     return <Button 
             type='delete'
             text='-'
+            onClick ={()=>{alert('Sort')}}
             />
 }

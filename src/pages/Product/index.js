@@ -5,8 +5,9 @@ import Search from '../../comps/Search';
 import Category from '../../comps/Category';
 import CategoryStats from '../../comps/CategoryStats';
 import List from '../../comps/List';
+import { Link } from "react-router-dom";
 
-function ProductPage(){
+function ProductPage({usePageViews}){
     var titles = [{
         title: 'Category',
     }];
@@ -146,11 +147,15 @@ function ProductPage(){
             <Header 
                 title={'Inventory/Overview'} 
             />
+            <Link to='/addeditProduct'>
             <Button
                 type='shadowBlue'
                 wide={true}
                 text={'+ Add Products'}
+                onClick ={()=>usePageViews}
             />
+            </Link>
+            
             <Search
                 showplaceholder={true}
                 placeholder= 'Search your products'
