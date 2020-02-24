@@ -283,7 +283,6 @@ function AddProductPage(){
             </div>
 
             <div className="action_btns">
-                <div style={{display:"flex",width:"55%",justifyContent:"space-between"}}>
                     <Button
                         type='borderBlue'
                         text='Cancel'
@@ -294,7 +293,6 @@ function AddProductPage(){
                         text='Add Product'
                         wide={true}
                     />
-                </div>
             </div>
 
 

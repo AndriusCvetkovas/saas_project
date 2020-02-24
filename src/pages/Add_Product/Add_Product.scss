@@ -78,10 +78,14 @@
 }
 
 .action_btns{
-    width: 60%;
+    width: 70%;
     margin-top: 80px;
     display: flex;
     justify-content: flex-end;
+    
+    * {
+        margin-left: 45px;
+    }
 }
 
   
