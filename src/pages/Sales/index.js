@@ -266,6 +266,12 @@ function SalesPage(){
             </div>
             <div className = {show}>
                 <OrderDetails 
+                orderNumber = '2245333'
+                orderDate = '27 January 2020'
+                estimateDate = '2 February 2020'
+                customerName = 'Angela Jang'
+                phoneNumber = '778.798.3214'
+                customerAddress = '5089 Dominion street, Burnaby, BC V5G 1C8'
                 />
                 <Category
                     titles={titlesSortItems}

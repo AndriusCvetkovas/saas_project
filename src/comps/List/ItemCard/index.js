@@ -2,9 +2,11 @@ import React, {useState} from 'react';
 import {Line} from 'rc-progress';
 import Button from '../../Button';
 import { findByLabelText } from '@testing-library/react';
-function ItemCard({itemId, itemCol0, itemCol1, itemCol2, itemCol3, itemCol4, itemCol5, itemCol6, itemCol7, sales}){
+import { Link } from "react-router-dom";
+function ItemCard({texture, clr, itemId, itemCol0, itemCol1, itemCol2, itemCol3, itemCol4, itemCol5, itemCol6, itemCol7, sales}){
     var varant = '';
     var cn = 'itemContainer';
+    var vn = 'varants hidden';
     if(itemCol5 == true){
         varant = 'Yes';
     }else if(itemCol5 == false) {
@@ -16,7 +18,11 @@ function ItemCard({itemId, itemCol0, itemCol1, itemCol2, itemCol3, itemCol4, ite
     const [s, setS] = useState(false)
     
     if(s){
-        cn ='itemContainer selected'
+        cn ='itemContainer selected';
+        vn ='varants';
+        if(itemCol5 == false){
+            vn ='hidden'
+        }
     };
     var butEl = <Button
         type='borderBlue'
@@ -67,6 +73,7 @@ function ItemCard({itemId, itemCol0, itemCol1, itemCol2, itemCol3, itemCol4, ite
         )
     }else {
     return(
+        <div>
         <div className = {cn} onClick={()=>setS(!s)}>
             <div>
                 {itemCol0}
@@ -92,8 +99,22 @@ function ItemCard({itemId, itemCol0, itemCol1, itemCol2, itemCol3, itemCol4, ite
                 {butEl}
             </div>
             <div>
-                <img className='edit' src={require('../../../imgs/icon-edit.png')} alt='edit'/>
+                <Link to='/addeditProduct'><img className='edit' src={require('../../../imgs/icon-edit.png')} alt='edit'/></Link>
             </div>
+        </div>
+        <div className={vn}>
+            <span>Color:  </span>
+            <span>{clr}  </span>
+            <span>Texture:  </span>
+            <span>{texture}  </span>
+            <span>Sku:  </span>
+            <span>{itemCol1} </span>
+            <div>
+                <span>Stock: </span>
+                <span>1/3</span>
+            </div>
+            
+        </div>
         </div>
     )
 }

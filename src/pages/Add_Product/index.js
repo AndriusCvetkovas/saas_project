@@ -6,7 +6,7 @@ import Category from '../../comps/Category';
 import CategoryStats from '../../comps/CategoryStats';
 import List from '../../comps/List';
 import Menu from '../../comps/Menu';
-
+import { Link } from "react-router-dom";
 //npm packages
 import Switch from "react-switch";
 
@@ -96,7 +96,7 @@ function AddProductPage(){
             <Header 
                 title={'Inventory/Overview/Add Product'} 
             />
-            <div className="back-btn"></div>
+            <Link to='/Inventory'><div className="back-btn"></div></Link>
 
             <div className="Detail_container">
                 <div className="image_holder">
@@ -284,16 +284,16 @@ function AddProductPage(){
 
             <div className="action_btns">
                 <div style={{display:"flex",width:"55%",justifyContent:"space-between"}}>
-                    <Button
+                    <Link to='/Inventory'><Button
                         type='borderBlue'
                         text='Cancel'
                         wide={true}
-                    />
-                    <Button
+                    /></Link>
+                    <Link to='/Inventory'><Button
                         type='blue'
                         text='Add Product'
                         wide={true}
-                    />
+                    /></Link>
                 </div>
             </div>
 

@@ -7,7 +7,7 @@ import CategoryStats from '../../comps/CategoryStats';
 import List from '../../comps/List';
 import { Link } from "react-router-dom";
 
-function ProductPage({usePageViews}){
+function ProductPage({}){
     var titles = [{
         title: 'Category',
     }];
@@ -56,7 +56,7 @@ function ProductPage({usePageViews}){
             value2: 12355.32,
             month1: 'June',
             month2: 'July',
-            dollar: true
+            dollar: true,
         },
         {
             itemTitle1: 'Bed',
@@ -105,7 +105,9 @@ function ProductPage({usePageViews}){
             itemCol4: '-',
             itemCol5: true,
             itemCol6: 4,
-            sales: false
+            sales: false,
+            clr: 'black',
+            texture: 'leather'
         },
         {
             itemId:'Item 2',
@@ -152,7 +154,6 @@ function ProductPage({usePageViews}){
                 type='shadowBlue'
                 wide={true}
                 text={'+ Add Products'}
-                onClick ={()=>usePageViews}
             />
             </Link>
             

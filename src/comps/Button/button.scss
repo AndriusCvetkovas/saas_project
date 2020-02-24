@@ -18,6 +18,9 @@ $fs:14px;
     &:active {
         background-color: grey;
     }
+    &:hover {
+        cursor: pointer;
+    }
 }
 .button_blue {
     background-color: #0096A9;
@@ -47,3 +50,6 @@ $fs:14px;
         background-color: red;
     }
 }
+a {
+    text-decoration: none;
+  }

@@ -6,6 +6,7 @@ import Category from '../../comps/Category';
 import CategoryStats from '../../comps/CategoryStats';
 import List from '../../comps/List';
 import Menu from '../../comps/Menu';
+import { Link } from "react-router-dom";
 
 var contact = [
     {
@@ -71,7 +72,7 @@ function AddOrders(){
             <Header 
                 title={'Sales/Add Orders'} 
             />
-             <div className="back-btn"></div>
+             <Link to='/Orders'><div className="back-btn"></div></Link>
 
              <div className="search-area">
                  <Search
@@ -238,21 +239,21 @@ function AddOrders(){
              </div>
 
              <div className="bottom-buttons">
-                 <Button 
+                <Link to='/Orders'><Button 
                     type='borderBlue'
                     text='Cancel'
                     wide={true}
-                 />
+                 /></Link>
                  <Button 
                     type='borderBlue'
                     text='Save as a Quote'
                     wide={true}
                  />
-                 <Button
+                 <Link to='/Orders'><Button
                     type='blue'
                     wide={true}
                     text='Finish'
-                />
+                /></Link>
              </div>
         </div>
     )
