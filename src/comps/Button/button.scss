@@ -1,4 +1,4 @@
-$fs:16px;
+$fs:14px;
 
 @mixin flex {
     display: flex;
@@ -17,6 +17,9 @@ $fs:16px;
     font-size: $fs;
     &:active {
         background-color: grey;
+    }
+    &:hover {
+        cursor: pointer;
     }
 }
 .button_blue {
@@ -47,3 +50,6 @@ $fs:16px;
         background-color: red;
     }
 }
+a {
+    text-decoration: none;
+  }

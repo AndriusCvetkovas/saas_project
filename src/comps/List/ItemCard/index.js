@@ -2,19 +2,27 @@ import React, {useState} from 'react';
 import {Line} from 'rc-progress';
 import Button from '../../Button';
 import { findByLabelText } from '@testing-library/react';
-function ItemCard({itemTitle, itemImage, itemCol1, itemCol2, itemCol3, itemCol4, itemCol5, itemCol6}){
+import { Link } from "react-router-dom";
+function ItemCard({texture, clr, itemId, itemCol0, itemCol1, itemCol2, itemCol3, itemCol4, itemCol5, itemCol6, itemCol7, sales}){
     var varant = '';
     var cn = 'itemContainer';
-    if(itemCol5){
+    var vn = 'varants hidden';
+    if(itemCol5 == true){
         varant = 'Yes';
-    }else {
+    }else if(itemCol5 == false) {
         varant = 'No';
+    }else {
+        varant = itemCol5;
     };
 
     const [s, setS] = useState(false)
     
     if(s){
-        cn ='itemContainer selected'
+        cn ='itemContainer selected';
+        vn ='varants';
+        if(itemCol5 == false){
+            vn ='hidden'
+        }
     };
     var butEl = <Button
         type='borderBlue'
@@ -27,13 +35,48 @@ function ItemCard({itemTitle, itemImage, itemCol1, itemCol2, itemCol3, itemCol4,
                 text = 'Order'
             />
         color = '#FF5F5F';
-    }
+    };
+
+    
+    
     var status = itemCol6 * 20;
-    console.log(status);
+    var marginCol0 = 0;
+    if(sales){
+        marginCol0 = 10;
+        return(
+        <div className = {cn} onClick={()=>setS(!s)} >
+            <div>
+                {itemCol0}
+            </div>
+            <div>
+                {itemCol1}
+            </div>
+            <div>
+                {itemCol2}
+            </div>
+            <div>
+                {itemCol3}
+            </div>
+            <div>
+                {itemCol4}
+            </div>
+            <div>
+                {itemCol5}
+            </div>
+            <div>
+                {itemCol6}
+            </div>
+            <div>
+                {itemCol7}
+            </div>
+        </div>
+        )
+    }else {
     return(
+        <div>
         <div className = {cn} onClick={()=>setS(!s)}>
             <div>
-                <img src={itemImage} alt={itemTitle}></img>
+                {itemCol0}
             </div>
             <div>
                 {itemCol1}
@@ -56,10 +99,25 @@ function ItemCard({itemTitle, itemImage, itemCol1, itemCol2, itemCol3, itemCol4,
                 {butEl}
             </div>
             <div>
-                <img className='edit' src={require('../../../imgs/icon-edit.png')} alt='edit'/>
+                <Link to='/addeditProduct'><img className='edit' src={require('../../../imgs/icon-edit.png')} alt='edit'/></Link>
             </div>
         </div>
+        <div className={vn}>
+            <span>Color:  </span>
+            <span>{clr}  </span>
+            <span>Texture:  </span>
+            <span>{texture}  </span>
+            <span>Sku:  </span>
+            <span>{itemCol1} </span>
+            <div>
+                <span>Stock: </span>
+                <span>1/3</span>
+            </div>
+            
+        </div>
+        </div>
     )
+}
 };
 
 ItemCard.defaultProps = {

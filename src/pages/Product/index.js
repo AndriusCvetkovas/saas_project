@@ -5,8 +5,9 @@ import Search from '../../comps/Search';
 import Category from '../../comps/Category';
 import CategoryStats from '../../comps/CategoryStats';
 import List from '../../comps/List';
+import { Link } from "react-router-dom";
 
-function ProductPage(){
+function ProductPage({}){
     var titles = [{
         title: 'Category',
     }];
@@ -54,7 +55,8 @@ function ProductPage(){
             value1: 23334.44,
             value2: 12355.32,
             month1: 'June',
-            month2: 'July'
+            month2: 'July',
+            dollar: true,
         },
         {
             itemTitle1: 'Bed',
@@ -62,7 +64,8 @@ function ProductPage(){
             value1: 15612.89,
             value2: 5000.5,
             month1: 'June',
-            month2: 'July'
+            month2: 'July',
+            dollar: true
         },
         {
             itemTitle1: 'Accessory',
@@ -70,7 +73,8 @@ function ProductPage(){
             value1: 14578.3,
             value2: 5659.5,
             month1: 'June',
-            month2: 'July'
+            month2: 'July',
+            dollar: true
         },
         {
             itemTitle1: 'Table/Desk',
@@ -78,7 +82,8 @@ function ProductPage(){
             value1: 13334.44,
             value2: 12355.32,
             month1: 'June',
-            month2: 'July'
+            month2: 'July',
+            dollar: true
         },
         {
             itemTitle1: 'Cabinet',
@@ -86,49 +91,56 @@ function ProductPage(){
             value1: 14334.44,
             value2: 8985.32,
             month1: 'June',
-            month2: 'July'
+            month2: 'July',
+            dollar: true
         },
     ]
     var items = [
         {
-            itemTitle:'Item 1',
-            itemImage: require('../../imgs/furnitures/chair-01.jpeg'),
+            itemId:'Item 1',
+            itemCol0: <img src={require('../../imgs/furnitures/chair-01.jpeg')} alt={'chair'}></img>,
             itemCol1: 'MTRS-M1',
             itemCol2: 'Sofa',
             itemCol3: 'Magniflex',
             itemCol4: '-',
             itemCol5: true,
             itemCol6: 4,
+            sales: false,
+            clr: 'black',
+            texture: 'leather'
         },
         {
-            itemTitle:'Item 2',
-            itemImage: require('../../imgs/furnitures/chair-02.jpeg'),
+            itemId:'Item 2',
+            itemCol0: <img src={require('../../imgs/furnitures/chair-02.jpeg')} alt={'chair'}></img>,
             itemCol1: 'MTRS-M2',
             itemCol2: 'Chair',
             itemCol3: 'Magniflex',
             itemCol4: 'Mono',
             itemCol5: false,
             itemCol6: 3,
+            sales: false
         },
         {
-            itemTitle:'Item 2',
-            itemImage: require('../../imgs/furnitures/desk-01.jpeg'),
+            itemId:'Item 2',
+            itemCol0: <img src={require('../../imgs/furnitures/desk-01.jpeg')} alt={'desk'}></img>,
             itemCol1: 'MTRS-M2',
             itemCol2: 'Chair',
             itemCol3: 'Magniflex',
             itemCol4: 'Mono',
             itemCol5: false,
             itemCol6: 1,
+            sales: false
         },
         {
-            itemTitle:'Item 2',
-            itemImage: require('../../imgs/furnitures/sofa-01.jpg'),
+            itemId:'Item 2',
+            itemCol0: <img src={require('../../imgs/furnitures/sofa-01.jpg')} alt={'sofa'}></img>,
             itemCol1: 'MTRS-M2',
             itemCol2: 'Chair',
             itemCol3: 'Magniflex',
             itemCol4: 'Mono',
             itemCol5: false,
             itemCol6: 3,
+            sales: false
         },
     ];
 
@@ -137,11 +149,14 @@ function ProductPage(){
             <Header 
                 title={'Inventory/Overview'} 
             />
+            <Link to='/addeditProduct'>
             <Button
                 type='shadowBlue'
                 wide={true}
                 text={'+ Add Products'}
             />
+            </Link>
+            
             <Search
                 showplaceholder={true}
                 placeholder= 'Search your products'

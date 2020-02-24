@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6cd5ee3e.chunk.css",
+    "main.js": "/static/js/main.4b83127d.chunk.js",
+    "main.js.map": "/static/js/main.4b83127d.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.5d41416f.js",
+    "runtime-main.js.map": "/static/js/runtime-main.5d41416f.js.map",
+    "static/js/2.de8e7cdd.chunk.js": "/static/js/2.de8e7cdd.chunk.js",
+    "static/js/2.de8e7cdd.chunk.js.map": "/static/js/2.de8e7cdd.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.e182435e1d4f9b6bdf9f9f8ae06fb31e.js": "/precache-manifest.e182435e1d4f9b6bdf9f9f8ae06fb31e.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.6cd5ee3e.chunk.css.map": "/static/css/main.6cd5ee3e.chunk.css.map",
+    "static/js/2.de8e7cdd.chunk.js.LICENSE": "/static/js/2.de8e7cdd.chunk.js.LICENSE",
+    "static/media/chair-01.jpeg": "/static/media/chair-01.7e88d45c.jpeg",
+    "static/media/chair-02.jpeg": "/static/media/chair-02.17407075.jpeg",
+    "static/media/chair-02.jpg": "/static/media/chair-02.ece85aa5.jpg",
+    "static/media/desk-01.jpeg": "/static/media/desk-01.42a17fbe.jpeg",
+    "static/media/sofa-01.jpg": "/static/media/sofa-01.0dc45a6e.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5d41416f.js",
+    "static/js/2.de8e7cdd.chunk.js",
+    "static/css/main.6cd5ee3e.chunk.css",
+    "static/js/main.4b83127d.chunk.js"
+  ]
+}

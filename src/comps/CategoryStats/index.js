@@ -1,13 +1,22 @@
 import React from 'react';
 import PieChart from 'react-minimal-pie-chart';
 
-function CategoryStats({itemTitle1, itemTitle2, value1, value2, month1 ,month2}){
+function CategoryStats({itemTitle1, itemTitle2, value1, value2, month1 ,month2, dollar}){
+    var sign = '';
+    var marginT = -75;
+    var marginB = -60;
+    if(dollar){
+        sign = '$';
+        marginT = -90;
+        marginB = -70;
+
+    };
     return(
         <div className='stat_box'>
             <h1>{itemTitle1}</h1>
             <h2>{itemTitle2}</h2>
             <PieChart
-                style = {{marginTop: -90, marginBottom: -70}}
+                style = {{marginTop: marginT, marginBottom: marginB}}
                 radius = {20}
                 startAngle = {270}
                 data={[
@@ -17,12 +26,12 @@ function CategoryStats({itemTitle1, itemTitle2, value1, value2, month1 ,month2})
             />
             <div className='value_wrapper'>
                 <div className = 'value_div'>
-                    ${value1}
+                    {sign}{value1}
                     <br/>
                     {month1}
                 </div>
                 <div className = 'value_div value2'>
-                    ${value2}
+                    {sign}{value2}
                     <br/>
                     {month2}
                 </div>

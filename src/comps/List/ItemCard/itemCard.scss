@@ -8,7 +8,8 @@
     height: 150px;
     border-radius: 15px;
     margin-bottom: 20px;
-    
+    width: min-content;
+    margin-left: 0px;
     &:active {
         background-color: white;
     }
@@ -19,6 +20,9 @@
         &:first-of-type {
             width: 150px;
             justify-content: flex-start;
+        }
+        a {
+            text-decoration: underline;
         }
         img {
             background-color: white;
@@ -31,7 +35,29 @@
             height: auto;
             border-radius: 0px;
             background-color: transparent;
+            &:hover {
+                cursor: pointer;
+            }
         }
+        .status {
+            width: 34px;
+            height: 34px;
+        }
+    }
+}
+.varants {
+    margin: 30px;
+    margin-left: 200px;
+    display: flex;
+    flex-direction: row;
+    span {
+        &:nth-child(2n+1){
+            color: #0096A9;
+        }
+        margin: 2px;
+    }
+    div {
+        margin-left: 50px;
     }
 }
 .selected {
@@ -39,4 +65,7 @@
 }
 .itemSelected {
     background-color: '#FFFFFF';
+}
+.hidden {
+    display: none;
 }

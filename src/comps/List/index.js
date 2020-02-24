@@ -1,5 +1,6 @@
 import React from 'react';
 import ItemCard from './ItemCard';
+import ItemCardStatus from './ItemCardStatus';
 
 function List({items, orders, i}){
     if(i){
@@ -13,8 +14,8 @@ function List({items, orders, i}){
     } else {
         return(
             <div className='container'>
-                {orders.map((o, i)=>{
-                        return <ItemCard {...o}/>
+                {items.map((o, i)=>{
+                        return <ItemCardStatus {...o}/>
                 })}
             </div>
         )
@@ -31,16 +32,7 @@ List.defaultProps = {
         itemCol3: 'nn',
         itemCol4: 'nn',
         itemCol5: true,
-    },
-    {
-        itemTitle:'Item 2',
-        itemImage: "require('../../../imgs/furnitures/chair-01.jpeg')",
-        itemCol1: 'nn',
-        itemCol2: 'nn',
-        itemCol3: 'nn',
-        itemCol4: 'nn',
-        itemCol5: false,
-    },
+    }
     ]
 };
 
