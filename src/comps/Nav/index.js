@@ -33,6 +33,12 @@ function Nav(){
                     fontSize: 16
                     }} 
                     to='/Inventory'>Overviews</NavLink>
+                    <NavLink 
+                    activeStyle={{
+                    fontWeight: "bold",
+                    fontSize: 16
+                    }} 
+                    to='/InventoryOrders'>Inventory Orders</NavLink>
                     <div>Templates</div>
                 </div>
                 <div className='customer_section wrap'>
