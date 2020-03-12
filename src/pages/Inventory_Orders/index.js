@@ -49,7 +49,9 @@ function InventoryOrders(){
             itemCol2: '$ 9,000',
             itemCol3: '4',
             itemCol4: '$ 36,000',
+            itemCol5: 'Magniflex',
             sales: true,
+            apr: 1
         },
         {
             itemId:'Item 2',
@@ -58,7 +60,9 @@ function InventoryOrders(){
             itemCol2: '$ 12,000',
             itemCol3: '10',
             itemCol4: '$ 120,000',
+            itemCol5: 'Magniflex',
             sales: true,
+            apr: 1
         },
         {
             itemId:'Item 2',
@@ -67,7 +71,9 @@ function InventoryOrders(){
             itemCol2: '$ 10,000',
             itemCol3: '4',
             itemCol4: '$ 40,000',
+            itemCol5: 'Magniflex',
             sales: true,
+            apr: 1
         },
         {
             itemId:'Item 3',
@@ -76,7 +82,9 @@ function InventoryOrders(){
             itemCol2: '$ 15,000',
             itemCol3: '3',
             itemCol4: '$ 45,000',
+            itemCol5: 'Magniflex',
             sales: true,
+            apr: 0
         },
     ];
     var hide = '';
@@ -108,7 +116,7 @@ function InventoryOrders(){
             />
             <List
                     items = {orders}
-                    i = {true}
+                    ord = {true}
             />
         </div>
     )

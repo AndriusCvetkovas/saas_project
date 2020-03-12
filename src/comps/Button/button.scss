@@ -15,9 +15,10 @@ $fs:14px;
     font-weight: 200;
     border: none;
     color: #FFFFFF;
+    background-color: #979797;
     font-size: $fs;
     &:active {
-        background-color: grey;
+        background-color: #979797;
     }
     &:hover {
         cursor: pointer;
