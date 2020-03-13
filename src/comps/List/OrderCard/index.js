@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Button from '../../Button';
 import Checkmark from '../../Checkmark';
 import { findByLabelText } from '@testing-library/react';
-function OrderCard({texture, clr, itemId, itemCol0, itemCol1, itemCol2, itemCol3, itemCol4, itemCol5, itemCol7, sales, apr}){
+function OrderCard({texture, cc, itemId, itemCol0, itemCol1, itemCol2, itemCol3, itemCol4, itemCol5, itemCol7, sales, apr}){
     var itemCol6 = <img className='status_icon' src={require('../../../imgs/btn-clock.png')} alt='icon' ></img>;
     var butType = '';
     var butFunc = '';
@@ -14,8 +14,8 @@ function OrderCard({texture, clr, itemId, itemCol0, itemCol1, itemCol2, itemCol3
     }
     return(
         <div style ={{display: 'flex', flexDirection:'row', alignItems:'center'}}>
-            <div style={{flex: 0.5,minWidth: 50, marginTop: -40}}>
-                <Checkmark />
+            <div style={{flex: 0.5,minWidth: 50, marginTop: -40, marginRight: -12}}>
+                <Checkmark stat={cc}/>
             </div>
             <div className='itemContainer'>
             <div>

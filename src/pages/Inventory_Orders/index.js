@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Header from '../../comps/Header';
 import Button from '../../comps/Button';
 import Search from '../../comps/Search';
@@ -6,6 +6,7 @@ import Category from '../../comps/Category';
 import List from '../../comps/List';
 import Checkmark from '../../comps/Checkmark';
 function InventoryOrders(){
+    
     var titlesSort = [
         {
             title: 'Order No.',
@@ -52,7 +53,7 @@ function InventoryOrders(){
             itemCol4: '$ 36,000',
             itemCol5: 'Magniflex',
             sales: true,
-            apr: 1
+            apr: 1,
         },
         {
             itemId:'Item 2',
@@ -63,7 +64,7 @@ function InventoryOrders(){
             itemCol4: '$ 120,000',
             itemCol5: 'Magniflex',
             sales: true,
-            apr: 1
+            apr: 1,
         },
         {
             itemId:'Item 2',
@@ -74,7 +75,7 @@ function InventoryOrders(){
             itemCol4: '$ 40,000',
             itemCol5: 'Magniflex',
             sales: true,
-            apr: 1
+            apr: 1,
         },
         {
             itemId:'Item 3',
@@ -85,7 +86,7 @@ function InventoryOrders(){
             itemCol4: '$ 45,000',
             itemCol5: 'Magniflex',
             sales: true,
-            apr: 0
+            apr: 0,
         },
     ];
     var hide = '';
@@ -95,7 +96,7 @@ function InventoryOrders(){
         hide = 'hide';
         show = '';
     }
-
+    const [cc, setCc] = useState(false)
     return(
         <div style = {{marginLeft: '39px', marginTop: '39px', overflowY: 'auto'}}>
             <Header 
@@ -113,14 +114,15 @@ function InventoryOrders(){
                 wide={true}
             />
             <div style ={{display: 'flex', flexDirection: 'row', alignItems:'center', marginTop: 30}}>
-                <Checkmark />
-                <Category
+                <div style={{display: 'relative', maxWidth: 35, flex: 0.5}} onClick={()=>setCc(!cc)}><Checkmark /></div>
+                    <Category
                 titles={titlesSort}
             />
             </div>
             <List
                     items = {orders}
                     ord = {true}
+                    cc = {cc}
             />
         </div>
     )

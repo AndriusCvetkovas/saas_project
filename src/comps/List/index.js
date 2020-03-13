@@ -3,7 +3,7 @@ import ItemCard from './ItemCard';
 import ItemCardStatus from './ItemCardStatus';
 import OrderCard from './OrderCard';
 
-function List({items, orders, i, ord}){
+function List({items, orders, i, ord, cc}){
     if(i){
         return(
             <div className='container'>
@@ -16,7 +16,7 @@ function List({items, orders, i, ord}){
         return(
             <div className='container'>
                 {items.map((o, i)=> {
-                    return <OrderCard {...o} />
+                    return <OrderCard {...o} cc={cc}/>
                 })
                 }
             </div>
@@ -25,7 +25,7 @@ function List({items, orders, i, ord}){
         return(
             <div className='container'>
                 {items.map((o, i)=>{
-                        return <ItemCardStatus {...o}/>
+                        return <ItemCardStatus {...o} />
                 })}
             </div>
         )
