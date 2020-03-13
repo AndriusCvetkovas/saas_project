@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import Button from '../../Button';
+import Checkmark from '../../Checkmark';
+import { findByLabelText } from '@testing-library/react';
 function OrderCard({texture, clr, itemId, itemCol0, itemCol1, itemCol2, itemCol3, itemCol4, itemCol5, itemCol7, sales, apr}){
-    var itemCol6 = <img className='status_icon' src={require('../../../imgs/icon-question.png')} alt='icon' ></img>;
+    var itemCol6 = <img className='status_icon' src={require('../../../imgs/btn-clock.png')} alt='icon' ></img>;
     var butType = '';
     var butFunc = '';
     if (apr == 1){
@@ -11,7 +13,11 @@ function OrderCard({texture, clr, itemId, itemCol0, itemCol1, itemCol2, itemCol3
         itemCol6 =<img className='status_icon' src={require('../../../imgs/icon-success.png')} alt ='icon' ></img>;
     }
     return(
-        <div className='itemContainer'>
+        <div style ={{display: 'flex', flexDirection:'row', alignItems:'center'}}>
+            <div style={{flex: 0.5, marginTop: -40}}>
+                <Checkmark />
+            </div>
+            <div className='itemContainer'>
             <div>
                 {itemCol0}
             </div>
@@ -41,6 +47,8 @@ function OrderCard({texture, clr, itemId, itemCol0, itemCol1, itemCol2, itemCol3
                 />
             </div>
         </div>
+        </div>
+        
     )
 }
 

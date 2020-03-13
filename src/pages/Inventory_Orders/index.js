@@ -4,6 +4,7 @@ import Button from '../../comps/Button';
 import Search from '../../comps/Search';
 import Category from '../../comps/Category';
 import List from '../../comps/List';
+import Checkmark from '../../comps/Checkmark';
 function InventoryOrders(){
     var titlesSort = [
         {
@@ -111,9 +112,12 @@ function InventoryOrders(){
                 placeholder= 'Search for inventory orders'
                 wide={true}
             />
-            <Category
+            <div style ={{display: 'flex', flexDirection: 'row', alignItems:'center', marginTop: 30}}>
+                <Checkmark />
+                <Category
                 titles={titlesSort}
             />
+            </div>
             <List
                     items = {orders}
                     ord = {true}

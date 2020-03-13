@@ -6,7 +6,7 @@ function Checkmark({stat}){
     const [check, setCheck] = useState(stat);
 
     if(check){
-        ch = <IoIosCheckmark style={{width: 35, height: 35, marginTop: -5, marginLeft: -5}}/>;
+        ch = <IoIosCheckmark style={{minWidth:35, minHeight:35, marginLeft:-5}}/>;
     }
 
     return(
