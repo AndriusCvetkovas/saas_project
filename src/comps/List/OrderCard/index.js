@@ -14,7 +14,7 @@ function OrderCard({texture, clr, itemId, itemCol0, itemCol1, itemCol2, itemCol3
     }
     return(
         <div style ={{display: 'flex', flexDirection:'row', alignItems:'center'}}>
-            <div style={{flex: 0.5, marginTop: -40}}>
+            <div style={{flex: 0.5,minWidth: 50, marginTop: -40}}>
                 <Checkmark />
             </div>
             <div className='itemContainer'>
