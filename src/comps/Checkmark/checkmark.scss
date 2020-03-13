@@ -1,0 +1,9 @@
+.checkmark_container {
+    width: 24px;
+    height: 24px;
+    background-color: #E4E4E4;
+    border-radius: 2px;
+    &:hover {
+        cursor: pointer;
+    }
+}
