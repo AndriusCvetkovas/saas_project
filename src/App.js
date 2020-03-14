@@ -5,6 +5,7 @@ import ProductPage from './pages/Product';
 import SalesPage from './pages/Sales';
 import AddProductPage from './pages/Add_Product'
 import AddOrders from './pages/Add_Orders';
+import PricingPage from './pages/PricingPlan';
 import Nav from './comps/Nav';
 import InventoryOrders from './pages/Inventory_Orders';
 import { BrowserRouter, Route, NavLink, Link, Switch, useLocation } from "react-router-dom";
@@ -32,6 +33,7 @@ function App() {
             <InventoryOrders/>
           </Route>
         </Switch>
+
       </div>
     </div>
     </BrowserRouter>

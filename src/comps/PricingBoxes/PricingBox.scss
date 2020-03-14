@@ -1,0 +1,40 @@
+
+@import './pages/PricingPlan/Pricing.scss';
+
+.container{
+    height: 88%;
+    width: 400px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 5px 11px -3px rgba(0,0,0,0.75);
+    transition: 0.5s;
+
+    .price {
+        font-size: 40pt;
+        color: #0096A9;
+    }
+    .buttons-style{
+        @include flexMiddle();
+        margin-top: 40px;
+    }
+}
+
+.largercontainer{
+    min-height: 750px;
+    width: 450px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 5px 11px -3px rgba(0,0,0,0.75);
+    transition: 0.5s;
+    border: 2px solid #0096A9;
+
+    .price {
+        font-size: 40pt;
+        color: #0096A9;
+    }
+
+    .buttons-style{
+        @include flexMiddle();
+        margin-top: 100px;
+    }
+}
