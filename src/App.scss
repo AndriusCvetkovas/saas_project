@@ -11,11 +11,15 @@
 @import './comps/OrderDetails/orderDetails.scss';
 @import './comps/PaymentInfo/paymentInfo.scss';
 @import './comps/Notes/notes.scss';
+@import './comps/Nav/nav.scss';
+@import './comps/Checkmark/checkmark.scss';
 @import './comps/PricingBoxes/PricingBox.scss';
+
 //Page stylesheets
 @import './pages/Add_Product/Add_Product.scss';
 @import './pages/Add_Orders/Add_Orders.scss';
 @import './pages/PricingPlan/Pricing.scss';
+
 
 
 body {
@@ -33,60 +37,6 @@ body {
   flex:5;
   position: relative;
   margin-left: 240px;
-}
-.Nav{
-  flex: 1;
-  height: 100vh;
-  position: fixed;
-  overflow: auto;
-  background-color: white;
-  max-width: 240px;
-  min-width: 240px;
-  @include flex();
-  justify-content: center;
-  flex-direction: column;
-  h1 {
-    margin-top: 60px;
-    font-size: 18px;
-    color: #0096A9;
-  }
-  img {
-    margin-top: 00px;
-    margin-bottom: 40px;
-    background-color: grey;
-    width: 100px;
-    height: 100px;
-    border-radius: 100px;
-  }
-  .company_name {
-    font-size: 16px;
-  }
-  .wrap {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    width: 50%;
-    div, a {
-      font-size: 14px;
-      margin-top: 10px;
-      margin-bottom: 10px;
-      width: 100px;
-    }
-    a {
-      text-decoration: none;
-      &:hover {
-        cursor: pointer;
-      }
-      &:visited {
-        color: black;
-      }
-      &:active {
-        font-weight: bold;
-      }
-    }
-    
-  }
 }
 .hide {
   display: none;

@@ -7,6 +7,7 @@ import AddProductPage from './pages/Add_Product'
 import AddOrders from './pages/Add_Orders';
 import PricingPage from './pages/PricingPlan';
 import Nav from './comps/Nav';
+import InventoryOrders from './pages/Inventory_Orders';
 import { BrowserRouter, Route, NavLink, Link, Switch, useLocation } from "react-router-dom";
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
     <div className='main'>
       <Nav/>
       <div className='solution_container'>
-        {/*<Switch>
+        <Switch>
           <Route path="/Orders">
             <SalesPage/>
           </Route>
@@ -28,8 +29,11 @@ function App() {
           <Route path="/addOrder">
             <AddOrders />
           </Route>
-        </Switch> */}
-        <PricingPage />
+          <Route path='/inventoryOrders'>
+            <InventoryOrders/>
+          </Route>
+        </Switch>
+
       </div>
     </div>
     </BrowserRouter>

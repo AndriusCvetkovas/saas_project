@@ -1,0 +1,14 @@
+.checkmark_container {
+    max-width: 24px;
+    height: 24px;
+    background-color: #E4E4E4;
+    border-radius: 2px;
+    margin-right: 10px;
+    position: relative;
+    flex: 0.5;
+    top: 10px;
+    @include flex();
+    &:hover {
+        cursor: pointer;
+    }
+}
