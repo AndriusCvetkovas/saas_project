@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Menu from '../../comps/Menu';
 import PlanDetails from '../../comps/Plan_Details'
 import Button from '../../comps/Button';
+import PaymentStripe from '../../comps/PaymentStripe';
 
 function CheckOutPage(){
 
@@ -19,7 +20,6 @@ function CheckOutPage(){
         {
             CategoryTitle:"Enterprise"},
     ]
-
 
     return (
         <div className="checkout-container">
@@ -103,6 +103,7 @@ function CheckOutPage(){
 
                      <div className={card}>
                          {/* Card information goes in here*/}
+                         <PaymentStripe />
                          
                      </div>
 

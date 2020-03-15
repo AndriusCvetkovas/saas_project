@@ -5,6 +5,8 @@
     margin: 0;
     display: flex;
     overflow: hidden;
+    align-items: center;
+    justify-content: center;
 }
 
 .left_checkout{
@@ -77,9 +79,14 @@
     position: relative;
     display: flex;
     justify-content: center;
+    align-items: center;
+    input {
+        font-size: 16px;
+        font-family: 'Raleway', sans-serif;
+    }
 
     .payment-method-box{
-        height: 73%;
+        height: 50%;
         width: 60%;
         position: absolute;
         top: 15%;
@@ -122,7 +129,6 @@
         .card-details-box{
             width: 100%;
             height: 90%;
-            background-color: powderblue;
             margin-top: 70px;
             display: none;
         }
@@ -138,23 +144,24 @@
         .card-details-box-active{
             width: 100%;
             height: 90%;
-            background-color: powderblue;
             margin-top: 70px;
             display: block;
         }
 
-        .company-info-box-active{
+        .company-info-box-active, .card-details-box-active{
             width: 100%;
             height: 90%;
-            margin-top: 40px;
+            margin-top: 30px;
             display: block;
 
             p{
-                font-size: 15pt;
-                margin-bottom: 30px;
+                font-size: 14pt;
+                margin-bottom: 15px;
                 color: #979797;
             }
             input {
+                padding: 5px;
+                padding-left: 0px;
                 width: 100%;
                 border: 0;
                 outline: 0;
@@ -174,7 +181,7 @@
 
                 p{
                     font-size: 15pt;
-                    margin-bottom: 30px;
+                    margin-bottom: 15px;
                     color: #979797;
                 }
                 input {
@@ -187,16 +194,39 @@
                 }
             }
         }
-
     }
-
-    .save-button{
-        width: 100%;
-        height: 180px;
-        margin-top: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+}
+.save-button{
+    width: 70%;
+    height: 150px;
+    margin-top: 20px;
+    display: flex;
+    margin-left: 15%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.card_div {
+    border-bottom: 1px solid black;
+    padding: 5px;
+}
+.pay_button {
+    @include flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    height: 55px;
+    border-radius: 28px;
+    border: none;
+    color: white;
+    background-color: #0096A9;
+    font-size: 20pt;
+    &:active {
+        background-color: grey;
     }
-
+    &:hover {
+        cursor: pointer;
+    }
 }
