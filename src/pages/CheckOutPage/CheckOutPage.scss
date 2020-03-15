@@ -5,6 +5,8 @@
     margin: 0;
     display: flex;
     overflow: hidden;
+    align-items: center;
+    justify-content: center;
 }
 
 .left_checkout{
@@ -77,13 +79,14 @@
     position: relative;
     display: flex;
     justify-content: center;
+    align-items: center;
     input {
         font-size: 16px;
         font-family: 'Raleway', sans-serif;
     }
 
     .payment-method-box{
-        height: 73%;
+        height: 50%;
         width: 60%;
         position: absolute;
         top: 15%;
@@ -214,7 +217,7 @@
     margin-top: 20px;
     margin-bottom: 20px;
     width: 100%;
-    height: 60px;
+    height: 55px;
     border-radius: 28px;
     border: none;
     color: white;
