@@ -103,6 +103,7 @@ function CheckOutPage(){
 
                      <div className={card}>
                          {/* Card information goes in here*/}
+                         
                      </div>
 
                      <div className={company}>
