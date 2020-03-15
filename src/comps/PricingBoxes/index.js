@@ -6,7 +6,7 @@ function PricingBox({title,price,products,users,feature1,feature2,feature3,butto
     var type;
     var hover = false;
 
-    const [box, setBox] = useState("container");
+    const [box, setBox] = useState("container-pricing");
     
     if(buttonType === "starter"){
         type = 'borderBlue';
@@ -15,7 +15,7 @@ function PricingBox({title,price,products,users,feature1,feature2,feature3,butto
         type = 'blue';
     }
     return(
-        <div className={box} onMouseOver={()=>{setBox("largercontainer")}} onMouseOut={()=>{setBox("container")}}>
+        <div className={box} onMouseOver={()=>{setBox("largercontainer")}} onMouseOut={()=>{setBox("container-pricing")}}>
             <div className="flexcenter" style={{marginTop:"20px"}}>
                 <h2>{title}</h2>
             </div>

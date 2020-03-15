@@ -15,10 +15,10 @@ function App() {
   return (
     <BrowserRouter>
     <div className='main'>
-      <Nav/>
+      {/* <Nav/>
       <div className='solution_container'>
 
-       <Switch>
+        <Switch>
           <Route path="/Orders">
             <SalesPage/>
           </Route>
@@ -34,9 +34,11 @@ function App() {
           <Route path='/inventoryOrders'>
             <InventoryOrders/>
           </Route>
-       </Switch>
+       </Switch>  */}
+       {/* <PricingPage /> */}
+       <CheckOutPage />
 
-      </div>
+      {/* </div> */}
     </div>
     </BrowserRouter>
   );
