@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Menu from '../../comps/Menu';
 import PlanDetails from '../../comps/Plan_Details'
 import Button from '../../comps/Button';
+import PaymentStripe from '../../comps/PaymentStripe';
 
 function CheckOutPage(){
 
@@ -19,7 +20,6 @@ function CheckOutPage(){
         {
             CategoryTitle:"Enterprise"},
     ]
-
 
     return (
         <div className="checkout-container">
@@ -103,6 +103,50 @@ function CheckOutPage(){
 
                      <div className={card}>
                          {/* Card information goes in here*/}
+                        {/* <form style={{width:"100%"}}>
+                            <p>Cardholder Name</p>
+                            <input type="text"></input>
+                            <p>Card Number/Expiration Date/ CVC</p>
+                                <div className='card_div'>
+                                    <Elements stripe={stripePromise}>
+                                    <CardElement 
+                                        options={{
+                                            style: {
+                                                padding: '10px',
+                                                base: {
+                                                    fontSize: '16px',
+                                                    padding: '20',
+                                                    fontFamily: 'Raleway',
+                                                    border: '1px solid black',
+                                                    fontSmoothing: 'antialiased',
+                                                    '::placeholder': {
+                                                        fontSize: '16px'
+                                                    }
+                                                },
+                                                invalid: {
+                                                    iconColor: '#ffc7ee',
+                                                    color: '#ffc7ee',
+                                                }
+                                            }
+                                        }}
+                                    />
+                                    </Elements>
+                                </div>
+                            <div>
+                                <p>Billing Address</p>
+                                <input type="text"></input>
+                            </div>
+                         </form>
+                         <div className ='save-button'>
+                             <button onClick='Payment()'>Send</button>
+                         <Button 
+                                type='longwideshadowBlue'
+                                wide={true}
+                                text="Pay 39.99"
+                             />
+                             <p style={{color:"#0096A9"}}> Cancel </p>
+                         </div> */}
+                         <PaymentStripe />
                          
                      </div>
 
