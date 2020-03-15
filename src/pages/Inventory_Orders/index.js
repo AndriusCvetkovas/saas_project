@@ -5,6 +5,8 @@ import Search from '../../comps/Search';
 import Category from '../../comps/Category';
 import List from '../../comps/List';
 import Checkmark from '../../comps/Checkmark';
+
+import PricingPage from '../PricingPlan';
 function InventoryOrders(){
     
     var titlesSort = [
@@ -96,35 +98,72 @@ function InventoryOrders(){
         hide = 'hide';
         show = '';
     }
-    const [cc, setCc] = useState(false)
-    return(
-        <div style = {{marginLeft: '39px', marginTop: '39px', overflowY: 'auto'}}>
-            <Header 
-                title={'Inventory/Pending Orders'} 
-            />
-            <Button 
-                type='shadowBlue'
-                wide={true}
-                text='Send All Requests'
-            />
-            <Search
-                shadow={true}
-                showplaceholder={true}
-                placeholder= 'Search for inventory orders'
-                wide={true}
-            />
-            <div style ={{display: 'flex', flexDirection: 'row', alignItems:'center', marginTop: 30}}>
-                <div style={{display: 'relative', maxWidth: 35, flex: 0.5}} onClick={()=>setCc(!cc)}><Checkmark /></div>
-                    <Category
-                titles={titlesSort}
-            />
+    const [cc, setCc] = useState(true);
+    if(sessionStorage.getItem('payment') =='Professional')
+    {
+        return(
+            <div style = {{marginLeft: '39px', marginTop: '39px', overflowY: 'auto'}}>
+                <Header 
+                    title={'Inventory/Pending Orders'} 
+                />
+                <Button 
+                    type='shadowBlue'
+                    wide={true}
+                    text='Send All Requests'
+                />
+                <Search
+                    shadow={true}
+                    showplaceholder={true}
+                    placeholder= 'Search for inventory orders'
+                    wide={true}
+                />
+                <div style ={{display: 'flex', flexDirection: 'row', alignItems:'center', marginTop: 30}}>
+                    <div style={{display: 'relative', maxWidth: 35, flex: 0.5}} onClick={()=>setCc(!cc)}><Checkmark stat={cc}/></div>
+                        <Category
+                    titles={titlesSort}
+                />
+                </div>
+                <List
+                        items = {orders}
+                        ord = {true}
+                        cc = {cc}
+                />
             </div>
-            <List
-                    items = {orders}
-                    ord = {true}
-                    cc = {cc}
-            />
-        </div>
-    )
+        )
+    } else {
+        return (
+            <div>
+                <div className='op' style = {{marginLeft: '39px', marginTop: '39px', overflowY: 'auto'}}>
+                    <Header 
+                        title={'Inventory/Pending Orders'} 
+                    />
+                    <Button 
+                        type='shadowBlue'
+                        wide={true}
+                        text='Send All Requests'
+                    />
+                    <Search
+                        shadow={true}
+                        showplaceholder={true}
+                        placeholder= 'Search for inventory orders'
+                        wide={true}
+                    />
+                    <div style ={{display: 'flex', flexDirection: 'row', alignItems:'center', marginTop: 30}}>
+                        <div style={{display: 'relative', maxWidth: 35, flex: 0.5}} onClick={()=>setCc(!cc)}><Checkmark /></div>
+                            <Category
+                        titles={titlesSort}
+                    />
+                    </div>
+                    <List
+                            items = {orders}
+                            ord = {true}
+                            cc = {cc}
+                    />
+                </div>
+                <PricingPage />
+            </div>
+        )
+    }
+    
 }
 export default InventoryOrders;

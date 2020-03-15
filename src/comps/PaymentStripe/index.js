@@ -10,7 +10,8 @@ import {
 
 const stripePromise = loadStripe('pk_test_Rla0UjJuDpACAUkzbJIZXbaG00fFSlyRNd');
 
-const StripeForm = () => {
+function StripeForm({setClosed, paymentfor}){
+  console.log(paymentfor)
   const stripe = useStripe();
   const elements = useElements();
 
@@ -25,8 +26,10 @@ const StripeForm = () => {
       console.log("error", error)
     } else {
       console.log("payments", paymentMethod);
-      sessionStorage.setItem("payment", "yes");
-      console.log(sessionStorage.getItem('payment'))
+      sessionStorage.setItem("payment", paymentfor);
+      console.log(sessionStorage.getItem('payment'));
+
+
     //   var clientSecret = '{sk_test_duIGR4ELH33gZx5YXWgtFIYz00PZoQQNVV}'
     //   var data = await stripe.confirmCardPayment(clientSecret, {
     //     payment_method: paymentMethod
@@ -66,17 +69,17 @@ const StripeForm = () => {
         </div>
         <div className='save-button'>
             <button type='submit' class='pay_button'>Pay Now</button>
-            <div style={{color:"#0096A9"}}>Cancel</div>
+            <div style={{color:"#0096A9"}} onClick={()=>setClosed(true)}>Cancel</div>
         </div>
       
     </form>
   )
 }
 
-const PaymentStripe = () => {
+const PaymentStripe = ({setClosed, paymentfor}) => {
   return (
     <Elements stripe={stripePromise}>
-      <StripeForm />
+      <StripeForm setClosed={setClosed} paymentfor={paymentfor} />
     </Elements>
   )
 }

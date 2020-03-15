@@ -9,6 +9,7 @@
     @include flex();
     justify-content: center;
     flex-direction: column;
+    z-index: 1;
     h1 {
       margin-top: 60px;
       font-size: 18px;

@@ -4,13 +4,16 @@ import PlanDetails from '../../comps/Plan_Details'
 import Button from '../../comps/Button';
 import PaymentStripe from '../../comps/PaymentStripe';
 
-function CheckOutPage(){
+function CheckOutPage({setIsOpen, details}){
 
     const [clicked, setclicked] = useState("underline-active");
     const [clicked2, setclicked2] = useState("underline");
     const [card, setCard] = useState("card-details-box-active");
     const [company, setCompany] = useState("company-info-box");
-    
+    const [closed, setClosed] = useState(false);
+    if(closed){
+        setIsOpen(false);
+    }
 
     var plans = [
         {
@@ -19,8 +22,11 @@ function CheckOutPage(){
             CategoryTitle:"Starter"},
         {
             CategoryTitle:"Enterprise"},
-    ]
-
+    ];
+    
+    if(plans.CategoryTitle == 'Enterprise'){
+        
+    }
     return (
         <div className="checkout-container">
             <div className="left_checkout">
@@ -28,37 +34,37 @@ function CheckOutPage(){
                     <p style={{fontSize:25, margin:2}}>Your Plan:</p>
                     <Menu 
                         droparea={true}
-                        placeholder={"Professional"} 
+                        placeholder={details.selection} 
                         items={plans}
                         type={"plan-selection"}
                     />
                     <div style={{marginTop:"10px"}}>
                         <PlanDetails 
-                            products={"350 Products"}
-                            users={"25 users"}
-                            feature1={"Placing Orders"}
-                            feature2={"Template Features"}
-                            feature3={"50GB storages"}
-                            feature4={"24/7 support within 5 hours"}
+                            products={` ${details.products} Products`}
+                            users={`${details.users} Users`}
+                            feature1={details.feature1}
+                            feature2={details.feature2}
+                            feature3={details.feature3}
+                            feature4={details.feature4}
                         />
                     </div>
 
                     <div className="cost-box">
-                        <h2>$39.99</h2>
+                        <h2>{details.price}</h2>
                         <div className="cost-row">
                             <p>Pst(7%)</p>
                             <p>......................................................................</p>
-                            <p>$2.8</p>
+                            <p>${details.pst}</p>
                         </div>
                         <div className="cost-row">
                             <p>Gst(5%)</p>
                             <p>......................................................................</p>
-                            <p>$2.0</p>
+                            <p>${details.gst}</p>
                         </div>
                         <div className="cost-row">
                             <p>Total</p>
                             <p>......................................................................</p>
-                            <p>$44.78</p>
+                            <p>${details.total}</p>
                         </div>
                     </div>
                     
@@ -103,7 +109,7 @@ function CheckOutPage(){
 
                      <div className={card}>
                          {/* Card information goes in here*/}
-                         <PaymentStripe />
+                         <PaymentStripe setClosed={setClosed} paymentfor={details.selection} />
                          
                      </div>
 
@@ -153,7 +159,7 @@ function CheckOutPage(){
                                 wide={true}
                                 text="Save"
                              />
-                             <p style={{color:"#0096A9"}}> Cancel </p>
+                             <div style={{color:"#0096A9"}}> Cancel </div>
                          </div>
                      </div>
                  </div>

@@ -5,17 +5,19 @@
     flex-direction: column;
 }
 
+.wrapper-pricing {
+    height: 100vh;
+}
 .flexcenter{
     @include flexMiddle();
 }
 
+
 .pricing-box-container{
-    width: 90%;
-    height: 70%;
     margin-top: 10px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     margin-left: 10px;
 }

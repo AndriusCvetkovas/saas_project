@@ -7,10 +7,10 @@ import PricingBox from '../../comps/PricingBoxes';
 function PricingPage(){
 
     return (
-        <div className="wrapper">
+        <div className="wrapper-pricing">
             <div className="flexcenter">
                 <h1>Pricing & Plan</h1>
-                 <p>Unlock more features, generate more profit just at your fingertips, signup today!</p>
+                 <p>Unlock this and more features, generate more profit just at your fingertips, signup today!</p>
             </div>
 
             <div className="pricing-box-container">
@@ -39,9 +39,10 @@ function PricingPage(){
                     price={"69.99"}
                     products={"500"}
                     users={"50"}
-                    feature1={"Placing Orders"}
+                    feature1={"Template Features"}
                     feature2={"1TB storage"}
                     feature3={"24/7 support within 5 hours"}
+                    buttonType={"Professional"}
                 />
             </div>
 

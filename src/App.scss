@@ -43,4 +43,8 @@ body {
   display: none;
 }
 
-
+.op {
+  opacity: 0.1;
+  position: absolute;
+  z-index: -1;
+}
