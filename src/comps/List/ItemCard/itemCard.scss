@@ -30,6 +30,11 @@
             height: 150px;
             border-radius: 15px;
         }
+        .status_icon {
+            background-color: transparent;
+            width: 34px;
+            height: 34px;
+        }
         .edit {
             width: 30px;
             height: auto;
@@ -44,6 +49,7 @@
             height: 34px;
         }
     }
+    
 }
 .varants {
     margin: 30px;
