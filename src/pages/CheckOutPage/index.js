@@ -77,7 +77,7 @@ function CheckOutPage(){
                 <h1 style={{position:"absolute", top:"5%", left:"16%"}}>Payment Methods</h1>
                  <div className="payment-method-box">
                      <div className="userinfo-row">
-                         <div className={"card-title"} onClick={()=>{
+                         <div className={"info-title"} onClick={()=>{
                                  setclicked("underline-active");
                                  if(clicked2 == "underline-active"){
                                      setclicked2("underline");
