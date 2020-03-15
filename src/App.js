@@ -6,6 +6,7 @@ import SalesPage from './pages/Sales';
 import AddProductPage from './pages/Add_Product'
 import AddOrders from './pages/Add_Orders';
 import PricingPage from './pages/PricingPlan';
+import CheckOutPage from './pages/CheckOutPage';
 import Nav from './comps/Nav';
 import { BrowserRouter, Route, NavLink, Link, Switch, useLocation } from "react-router-dom";
 
@@ -13,9 +14,10 @@ function App() {
   return (
     <BrowserRouter>
     <div className='main'>
-      <Nav/>
+      <CheckOutPage/>
+      {/* <Nav/>
       <div className='solution_container'>
-        {/*<Switch>
+       <Switch>
           <Route path="/Orders">
             <SalesPage/>
           </Route>
@@ -28,9 +30,9 @@ function App() {
           <Route path="/addOrder">
             <AddOrders />
           </Route>
-        </Switch> */}
+        </Switch> 
         <PricingPage />
-      </div>
+      </div>*/}
     </div>
     </BrowserRouter>
   );

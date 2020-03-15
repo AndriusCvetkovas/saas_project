@@ -61,6 +61,16 @@ var template = [
    
 ]
 
+var plans = [
+    {
+        CategoryTitle:"Professional"},
+    {
+        CategoryTitle:"Starter"},
+    {
+        CategoryTitle:"Enterprise"},
+    
+]
+
 
 
 export const DefaultMenu = () => {
@@ -105,5 +115,13 @@ export const TemplateDropDown = () => {
             droparea={true}
             placeholder={"Select a template"} 
             items={template}
+            />
+}
+export const PlanDropDown = () => {
+    return <Menu 
+            droparea={true}
+            placeholder={"Professional"} 
+            items={plans}
+            type={"plan-selection"}
             />
 }

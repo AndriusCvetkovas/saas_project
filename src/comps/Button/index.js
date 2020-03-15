@@ -24,6 +24,10 @@ function Button({type, wide, text, onClick}){
         cn = 'delete'
     }
 
+    if(type === 'longwideshadowBlue'){
+        cn = "longwideBlue"
+    }
+
     return (
     <button className={cn} onClick={onClick}>{text}</button>
     )

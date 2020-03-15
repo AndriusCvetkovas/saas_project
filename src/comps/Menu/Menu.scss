@@ -39,6 +39,10 @@
         transform: rotate(-45deg);
     }
     
+    p:nth-of-type(2) {
+        display:none
+    }
+    
 }
 .menu-item-inputbox{
     border-radius:8px;
@@ -86,6 +90,10 @@
         height: 11px;
         background-size: cover;
     }
+
+    p:nth-of-type(2) {
+        display:none
+    }
 }
 
 .input_menu {
@@ -104,6 +112,10 @@
         width: 40px;
         background-color: #F0F6F7;
     }
+
+    p:nth-of-type(2) {
+        display:none
+    }
 }
 .quantity_input {
     width: 60px;
@@ -120,6 +132,10 @@
         border: 0;
         width: 30px;
         background-color: #F0F6F7;
+    }
+
+    p:nth-of-type(2) {
+        display:none
     }
 }
 
@@ -154,6 +170,9 @@
         background-size: cover;
     }
     
+    p:nth-of-type(2) {
+        display:none
+    }
 }
 
 .cost-input{
@@ -171,6 +190,10 @@
         font-size: 10pt;
         border: 0;
         width: 40px;
+    }
+
+    p:nth-of-type(2) {
+        display:none
     }
 }
 
@@ -190,6 +213,10 @@
         border: 0;
         width: 130px;
     }
+
+    p:nth-of-type(2) {
+        display:none
+    }
 }
 
 .small-quantity-input{
@@ -208,6 +235,10 @@
         width: 5px;
         color: lightgrey;
     }
+
+    p:nth-of-type(2) {
+        display:none
+    }
 }
 
 .price-menu{
@@ -224,7 +255,10 @@
         font-size: 10pt;
         border: 0;
         width: 50px;
+    }
 
+    p:nth-of-type(2) {
+        display:none
     }
     
 }
@@ -245,6 +279,10 @@
         margin-left: 5px;
 
     }
+
+    p:nth-of-type(2) {
+        display:none
+    }
     
 }
 .currency{
@@ -260,4 +298,50 @@
 }
 .discount-disabled{
     display:none;
+}
+
+.plan-selection-menu{
+    width: 250px;
+    height: 50px;
+    border: 2px solid #0096A9;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .selected-value{
+        margin-left: 10px;
+        color: black;
+        font-family: 'Raleway', sans-serif;
+        font-size: 25pt;
+        font-weight: 600;
+        border: 0;
+        background-color: inherit;
+    }
+    .dropdown-button{
+        // background-color: #0096A9;
+        // height: 15px;
+        // width: 15px;
+        // border-radius: 10px;
+        margin-right: 10px;
+        cursor: pointer;
+        background-image: url(../../imgs/btn-dropdown.png);
+        width: 16px;
+        height: 11px;
+        background-size: cover;
+    }
+    .dropdown-button-left{
+        margin-right: 10px;
+        cursor: pointer;
+        background-image: url(../../imgs/btn-dropdown.png);
+        width: 16px;
+        height: 11px;
+        background-size: cover;
+        transform: rotate(-45deg);
+    }
+
+    input {
+        display: none;
+    }
+    
 }

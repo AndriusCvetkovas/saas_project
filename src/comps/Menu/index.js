@@ -5,9 +5,11 @@ function Menu({items,droparea,variant,placeholder,inputplaceholder,input,quanity
     const [value , setValue] = useState(placeholder);
     const [drop, setDrop] = useState(false);
 
-    var cn = "MenuItems-container MenuItems-container_active"
-    var menu_style= "Menu-container"
-    var dropdown_button = "dropdown-button"
+    var cn = "MenuItems-container MenuItems-container_active";
+    var menu_style= "Menu-container";
+    var dropdown_button = "dropdown-button";
+
+    var menu_items_type;
     
     if(!drop){
         cn = "MenuItems-container-false"
@@ -77,6 +79,11 @@ function Menu({items,droparea,variant,placeholder,inputplaceholder,input,quanity
         discount = "discount-disabled";
     }
 
+    if(type == "plan-selection"){
+        menu_style = "plan-selection-menu";
+        menu_items_type = "plan"
+    }
+
 
  
    
@@ -85,6 +92,7 @@ function Menu({items,droparea,variant,placeholder,inputplaceholder,input,quanity
             <div className={menu_style}>
                 <p className={currency}>$</p>
                 <input className="selected-value" type='text' placeholder={value} ></input>
+                <p className="selected-value">{value}</p>
                 <p className={discount}>%</p>
                 <div onClick={()=> {setDrop(!drop)}} className={dropdown_button}></div>
             </div>
@@ -95,7 +103,9 @@ function Menu({items,droparea,variant,placeholder,inputplaceholder,input,quanity
                             return <MenuItems {...o} 
                                     setValue={setValue} 
                                     drop={drop}
-                                    setDrop={setDrop}/>
+                                    setDrop={setDrop}
+                                    type={menu_items_type}
+                                    />
                         })
                     }
                 </div>
