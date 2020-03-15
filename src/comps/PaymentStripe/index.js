@@ -15,7 +15,8 @@ function StripeForm({setClosed, paymentfor}){
   const stripe = useStripe();
   const elements = useElements();
 
-  const Pay = async () => {
+  const Pay = async (e) => {
+    e.preventDefault();
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: 'card',
       card: elements.getElement(CardElement),
@@ -27,8 +28,7 @@ function StripeForm({setClosed, paymentfor}){
       console.log("payments", paymentMethod);
       sessionStorage.setItem("payment", paymentfor);
       console.log(sessionStorage.getItem('payment'));
-
-
+      window.location.reload();
     //   var clientSecret = '{sk_test_duIGR4ELH33gZx5YXWgtFIYz00PZoQQNVV}'
     //   var data = await stripe.confirmCardPayment(clientSecret, {
     //     payment_method: paymentMethod

@@ -1,18 +1,18 @@
 import React from 'react';
 import '../App.scss';
 
-import Modal from '../comps/Modal';
+import ModalCard from '../comps/Modal';
 
 export default {
-    title: "Modal",
-    component: Modal
+    title: "ModalCard",
+    component: ModalCard
 }
 export const DefaultModal = () => {
-    return <Modal
+    return <ModalCard
     />
 }
 export const ModalWithQuestionmark = () => {
-    return <Modal
+    return <ModalCard
     mark={'question'}
     buttons={2}
     message={'Do you really want to do this?'}

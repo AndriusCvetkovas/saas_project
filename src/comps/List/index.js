@@ -3,7 +3,7 @@ import ItemCard from './ItemCard';
 import ItemCardStatus from './ItemCardStatus';
 import OrderCard from './OrderCard';
 
-function List({items, orders, i, ord, cc}){
+function List({items, orders, i, ord, cc, hide, setIsOpen3}){
     if(i){
         return(
             <div className='container'>
@@ -16,7 +16,7 @@ function List({items, orders, i, ord, cc}){
         return(
             <div className='container'>
                 {items.map((o, i)=> {
-                    return <OrderCard {...o} cc={cc}/>
+                    return <OrderCard {...o} cc={cc} hide={hide} setIsOpen3={setIsOpen3}/>
                 })
                 }
             </div>

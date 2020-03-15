@@ -45,7 +45,22 @@ body {
 }
 
 .op {
-  opacity: 0.1;
+  opacity: 0.4;
   position: absolute;
   z-index: -1;
+}
+.varants {
+  margin: 30px;
+  margin-left: 200px;
+  display: flex;
+  flex-direction: row;
+  span {
+      &:nth-child(2n+1){
+          color: #0096A9;
+      }
+      margin: 2px;
+  }
+  div {
+      margin-left: 50px;
+  }
 }
