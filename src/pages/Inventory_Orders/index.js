@@ -148,11 +148,11 @@ function InventoryOrders(){
                         placeholder= 'Search for inventory orders'
                         wide={true}
                     />
-                    <div style ={{display: 'flex', flexDirection: 'row', alignItems:'center', marginTop: 30}}>
-                        <div style={{display: 'relative', maxWidth: 35, flex: 0.5}} onClick={()=>setCc(!cc)}><Checkmark /></div>
-                            <Category
-                        titles={titlesSort}
-                    />
+                    <div style ={{marginTop: 30, display: 'block'}}>
+                        <div style={{maxWidth: 35, minWidth: 35}} onClick={()=>setCc(!cc)}><Checkmark /></div>
+                        <Category
+                            titles={titlesSort}
+                        />
                     </div>
                     <List
                             items = {orders}

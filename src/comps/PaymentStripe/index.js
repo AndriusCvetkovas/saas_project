@@ -15,8 +15,7 @@ function StripeForm({setClosed, paymentfor}){
   const stripe = useStripe();
   const elements = useElements();
 
-  const Pay = async (e) => {
-    e.preventDefault();
+  const Pay = async () => {
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: 'card',
       card: elements.getElement(CardElement),
