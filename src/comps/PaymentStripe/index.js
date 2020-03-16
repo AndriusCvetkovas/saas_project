@@ -29,7 +29,8 @@ function StripeForm({setClosed, paymentfor}){
       sessionStorage.setItem("payment", paymentfor);
       console.log(sessionStorage.getItem('payment'));
       window.location.reload();
-    //   var clientSecret = '{sk_test_duIGR4ELH33gZx5YXWgtFIYz00PZoQQNVV}'
+      // !!!!-----could not receive clientSecret without proper back end, assuming card went through sending confirmation to session storage-----
+    //   var clientSecret = fetch()
     //   var data = await stripe.confirmCardPayment(clientSecret, {
     //     payment_method: paymentMethod
     //   });
