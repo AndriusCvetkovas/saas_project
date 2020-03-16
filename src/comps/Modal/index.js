@@ -1,28 +1,45 @@
 import React from 'react';
 import Button from '../Button';
-function Modal({mark, message, buttons}){
+function ModalCard({mark, message, buttons, setIsOpen, setIsOpen2, modalIsOpen2, setIsOpen3}){
     var img = require("../../imgs/icon-success.png");
     if(mark == 'checkmark'){
         img = require("../../imgs/icon-success.png");
     } else if (mark == 'question'){
         img = require("../../imgs/icon-question.png");
     }
-    var but = <Button
-    type='shadowBlue'
-    text='Ok'
-    wide={true}
-    onClick ={()=>{alert('Sort')}}
+    if(setIsOpen2 || setIsOpen3){
+        var but = <Button
+        type='shadowBlue'
+        text='Ok'
+        wide={true}
+        onClick ={()=>setIsOpen2(!modalIsOpen2)}
+        />;
+    }else {
+        var but = <Button
+        type='shadowBlue'
+        text='Ok'
+        wide={true}
+        onClick ={()=>setIsOpen3(false)}
     />;
+    }
+    
     var but2 ='';
+    
     if(buttons == 1) {
         but = <Button
         type='shadowBlue'
         text='Ok'
         wide={true}
-        onClick ={()=>{alert('Sort')}}
+        onClick ={()=>setIsOpen(false)}
     />;
     }else {
-        but2 = <Button type='borderBlue' text='cancel' wide={true} onClick={()=>{alert('cancelled')}}/>
+        if(setIsOpen){
+            but2 = <Button type='borderBlue' text='Cancel' wide={true} onClick={()=>setIsOpen(false)}/>
+        }else {
+            but2 = <Button type='borderBlue' text='Cancel' wide={true} onClick={()=>setIsOpen3(false)}/>
+        }
+        //but2 = <Button type='borderBlue' text='Cancel' wide={true} onClick={()=>setIsOpen3(false)}/>
+        
     }
     return (
         <div className='modal_container'>
@@ -32,8 +49,8 @@ function Modal({mark, message, buttons}){
                     {message}
                 </div>
                 <div className='buttons'>
-                    {but}
                     {but2}
+                    {but}
                 </div>
                 
             </div>
@@ -41,8 +58,8 @@ function Modal({mark, message, buttons}){
     )
 }
 
-Modal.defaultProps= {
+ModalCard.defaultProps= {
     message: 'default',
     buttons: 1
 };
-export default Modal;
+export default ModalCard;

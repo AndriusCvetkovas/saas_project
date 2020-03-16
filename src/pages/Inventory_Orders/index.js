@@ -5,8 +5,37 @@ import Search from '../../comps/Search';
 import Category from '../../comps/Category';
 import List from '../../comps/List';
 import Checkmark from '../../comps/Checkmark';
+
+import PricingPage from '../PricingPlan';
+import Modal from 'react-modal';
+import ModalCard from '../../comps/Modal';
+
 function InventoryOrders(){
     
+//Modal logic
+    const customStyles = {
+        content : {
+        top                   : '50%',
+        left                  : '50%',
+        right                 : 'auto',
+        bottom                : 'auto',
+        marginRight           : '-50%',
+        transform             : 'translate(-50%, -50%)'
+        }
+    };
+  
+    const [modalIsOpen, setIsOpen] = useState(false);
+    const [modalIsOpen2, setIsOpen2] = useState(false);
+    const [modalIsOpen3, setIsOpen3] = useState(false);
+
+    var modalMessage = 'Do you want to send all selected orders?';
+    var modalButtons = 2;
+
+    function closeModal(){
+        setIsOpen(false);
+        console.log('close')
+    };
+
     var titlesSort = [
         {
             title: 'Order No.',
@@ -96,35 +125,186 @@ function InventoryOrders(){
         hide = 'hide';
         show = '';
     }
-    const [cc, setCc] = useState(false)
-    return(
-        <div style = {{marginLeft: '39px', marginTop: '39px', overflowY: 'auto'}}>
-            <Header 
-                title={'Inventory/Pending Orders'} 
-            />
-            <Button 
-                type='shadowBlue'
-                wide={true}
-                text='Send All Requests'
-            />
-            <Search
-                shadow={true}
-                showplaceholder={true}
-                placeholder= 'Search for inventory orders'
-                wide={true}
-            />
-            <div style ={{display: 'flex', flexDirection: 'row', alignItems:'center', marginTop: 30}}>
-                <div style={{display: 'relative', maxWidth: 35, flex: 0.5}} onClick={()=>setCc(!cc)}><Checkmark /></div>
-                    <Category
-                titles={titlesSort}
-            />
+    var butStyle = 'shadowBlue';
+    var hideCheckmarks = false;
+    const [cc, setCc] = useState(true);
+    var checkmarkCont = '';
+    
+    if(cc == true){
+        modalButtons = 1;
+        modalMessage = 'Please make a selection'
+    }
+    if(sessionStorage.getItem('payment') =='Professional'){
+        butStyle = '';
+        hideCheckmarks = true;
+        checkmarkCont = 'hide';
+        return(
+            <div style = {{marginLeft: '39px', marginTop: '39px', overflowY: 'auto'}}>
+                <Header 
+                    title={'Inventory/Pending Orders'} 
+                />
+                <Button 
+                    type={butStyle}
+                    wide={true}
+                    text='Send All Requests'
+                    setIsOpen={setIsOpen}
+                    onClick={setIsOpen}
+                />
+                <Search
+                    shadow={true}
+                    showplaceholder={true}
+                    placeholder= 'Search for inventory orders'
+                    wide={true}
+                />
+                <div style ={{display: 'flex', flexDirection: 'row', alignItems:'center', marginTop: 30}}>
+                    <div className={checkmarkCont} style={{display: 'relative', maxWidth: 35, flex: 0.5}} onClick={()=>setCc(!cc)}><Checkmark stat={cc}/></div>
+                        <Category
+                    titles={titlesSort}
+                />
+                </div>
+                <List
+                        items = {orders}
+                        ord = {true}
+                        cc = {cc}
+                        hide = {hideCheckmarks}
+                        setIsOpen3={setIsOpen3}
+                />
+                <Modal
+                    isOpen={modalIsOpen3}
+                    style={customStyles}
+                    onRequestClose={closeModal}
+                >
+                    <ModalCard 
+                        mark={'question'}
+                        message={'Do you want to send an order to Magniflex?'}
+                        buttons={2}
+                        setIsOpen3={setIsOpen3}
+                        setIsOpen2={setIsOpen2}
+                        modalIsOpen2={modalIsOpen2}
+                    />
+                </Modal>
+                <Modal
+                    isOpen={modalIsOpen2}
+                    style={customStyles}
+                    onRequestClose={closeModal}
+                >
+                    <ModalCard 
+                        mark={'checkmark'}
+                        message={'Your orders have been sent'}
+                        buttons={1}
+                        setIsOpen={setIsOpen}
+                    />
+                </Modal>
             </div>
-            <List
-                    items = {orders}
-                    ord = {true}
-                    cc = {cc}
-            />
-        </div>
-    )
+        )
+    } else if(sessionStorage.getItem('payment') == 'Enterprise') {
+        return(
+            <div style = {{marginLeft: '39px', marginTop: '39px', overflowY: 'auto'}}>
+                <Header 
+                    title={'Inventory/Pending Orders'} 
+                />
+                <Button 
+                    type={butStyle}
+                    wide={true}
+                    text='Send All Requests'
+                    onClick={setIsOpen}
+                />
+                <Search
+                    shadow={true}
+                    showplaceholder={true}
+                    placeholder= 'Search for inventory orders'
+                    wide={true}
+                />
+                <div style ={{display: 'flex', flexDirection: 'row', alignItems:'center', marginTop: 30}}>
+                    <div className={checkmarkCont} style={{display: 'relative', maxWidth: 35, flex: 0.5}} onClick={()=>setCc(!cc)}><Checkmark stat={cc}/></div>
+                        <Category
+                    titles={titlesSort}
+                />
+                </div>
+                <List
+                        items = {orders}
+                        ord = {true}
+                        cc = {cc}
+                        hide = {hideCheckmarks}
+                        setIsOpen3={setIsOpen3}
+                />
+                <Modal
+                    isOpen={modalIsOpen}
+                    style={customStyles}
+                    onRequestClose={closeModal}
+                >
+                    <ModalCard 
+                        mark={'question'}
+                        message={modalMessage}
+                        buttons={modalButtons}
+                        setIsOpen={setIsOpen}
+                        setIsOpen2={setIsOpen2}
+                        modalIsOpen2={modalIsOpen2}
+                    />
+                </Modal>
+                <Modal
+                    isOpen={modalIsOpen3}
+                    style={customStyles}
+                    onRequestClose={closeModal}
+                >
+                    <ModalCard 
+                        mark={'question'}
+                        message={'Do you want to send an order to Magniflex?'}
+                        buttons={2}
+                        setIsOpen3={setIsOpen3}
+                        setIsOpen2={setIsOpen2}
+                        modalIsOpen2={modalIsOpen2}
+                    />
+                </Modal>
+                <Modal
+                    isOpen={modalIsOpen2}
+                    style={customStyles}
+                    onRequestClose={closeModal}
+                >
+                    <ModalCard 
+                        mark={'checkmark'}
+                        message={'Your orders have been sent'}
+                        buttons={1}
+                        setIsOpen={setIsOpen}
+                    />
+                </Modal>
+                
+            </div>
+        )
+    }else {
+        return (
+            <div>
+                <div className='op' style = {{marginLeft: '39px', marginTop: '39px', overflowY: 'auto'}}>
+                    <Header 
+                        title={'Inventory/Pending Orders'} 
+                    />
+                    <Button 
+                        type={butStyle}
+                        wide={true}
+                        text='Send All Requests'
+                    />
+                    <Search
+                        shadow={true}
+                        showplaceholder={true}
+                        placeholder= 'Search for inventory orders'
+                        wide={true}
+                    />
+                    <div style ={{marginTop: 30, display: 'block'}}>
+                        <div style={{maxWidth: 35, minWidth: 35}} onClick={()=>setCc(!cc)}><Checkmark /></div>
+                        <Category
+                            titles={titlesSort}
+                        />
+                    </div>
+                    <List
+                            items = {orders}
+                            ord = {true}
+                            cc = {cc}
+                    />
+                </div>
+                <PricingPage />
+            </div>
+        )
+    }
+    
 }
 export default InventoryOrders;

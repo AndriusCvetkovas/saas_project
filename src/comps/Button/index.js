@@ -2,6 +2,9 @@ import React from 'react';
 
 function Button({type, wide, text, onClick}){
     var cn = 'button';
+    if(wide ===true){
+        cn ='button wide'
+    }
     if(type === 'blue'){
         cn = 'button button_blue';
         if(wide === true){

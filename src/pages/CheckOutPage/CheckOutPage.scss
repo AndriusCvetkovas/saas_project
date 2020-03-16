@@ -198,7 +198,7 @@
 }
 .save-button{
     width: 70%;
-    height: 150px;
+    height: 110px;
     margin-top: 20px;
     display: flex;
     margin-left: 15%;
@@ -206,6 +206,9 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    div:hover {
+        cursor: pointer;
+    }
 }
 .card_div {
     border-bottom: 1px solid black;
@@ -229,4 +232,5 @@
     &:hover {
         cursor: pointer;
     }
+    
 }

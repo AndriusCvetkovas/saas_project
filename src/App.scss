@@ -38,9 +38,29 @@ body {
   flex:5;
   position: relative;
   margin-left: 240px;
+  overflow: hidden;
 }
 .hide {
   display: none;
 }
 
-
+.op {
+  opacity: 0.4;
+  position: absolute;
+  z-index: -1;
+}
+.varants {
+  margin: 30px;
+  margin-left: 200px;
+  display: flex;
+  flex-direction: row;
+  span {
+      &:nth-child(2n+1){
+          color: #0096A9;
+      }
+      margin: 2px;
+  }
+  div {
+      margin-left: 50px;
+  }
+}

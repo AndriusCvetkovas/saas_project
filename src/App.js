@@ -15,7 +15,7 @@ function App() {
   return (
     <BrowserRouter>
     <div className='main'>
-      {/* <Nav/>
+      <Nav/>
       <div className='solution_container'>
 
         <Switch>
@@ -34,11 +34,11 @@ function App() {
           <Route path='/inventoryOrders'>
             <InventoryOrders/>
           </Route>
-       </Switch>  */}
+       </Switch> 
        {/* <PricingPage /> */}
-       <CheckOutPage />
+       {/* <CheckOutPage /> */}
 
-      {/* </div> */}
+      </div>
     </div>
     </BrowserRouter>
   );
